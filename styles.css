@@ -152,4 +152,22 @@ ul.checkbox li {
 
 
 
+/*********************************************/
+/* STYLING FOR YELLOW BOX
+/*********************************************/
+
+.songTitle {
+	margin-left: 20px;
+	margin-bottom: 0;
+	font-size: 1.4em;
+}
+
+.songCredit {
+	margin-top: 6px;
+	margin-left: 20px;
+}
+
+
+
+
 
