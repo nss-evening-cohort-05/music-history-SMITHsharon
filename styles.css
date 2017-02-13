@@ -1,0 +1,43 @@
+body {
+	font-family: 'Arimo', sans-serif;
+}
+
+.navbar {
+	width: 80%;
+	display: block;
+	margin: 2% 10%;
+	padding: 0 15px;
+	background-color: #FFB4B0;
+	border: 2px solid black;
+}
+
+ul.navbar {
+    list-style-type: none;
+  	text-align: left;
+  	justify-content: space-between;
+}
+
+/* Float the list items side by side */
+ul.navbar li {
+	display: inline;
+}
+
+.navbar li a.first-child {
+	margin-left: -25px;
+}
+
+/* Style the links inside the list items */
+ul.navbar li a {
+    display: inline-block;
+    margin: 0;
+    padding: 14px 1px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
