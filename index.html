@@ -19,29 +19,66 @@
 	<div>
 		<section class="leftBox">
 			<!-- slider -->
+			<label for="songLength">Song Length:</label>
+            <input type="range" name="songLength" class="songLength">
 
 			<!-- Artist -->
-			<!-- 1. Create five options for the artist select element of any artist that you enjoy. -->
+			<!-- 1. Create five options for the artist select element. -->
+			<label for="artist">Artist:</label>
+			<select name="artist">
+				<option value="">Dave Perkins</option>
+				<option value="">Keb' Mo'</option>
+				<option value="">Phil Keaggy</option>
+				<option value="">The Piano Guys</option>
+				<option value="">Pentatonix</option>
+				<option value="">Yo-Yo Ma / Chris Thile / Edgar Meyer</option>
+			</select>
 
 			<!-- Album -->
-			<!-- 2. Create at least five options for the album select element. One, or more, album for each artist.	 -->
+			<!-- 2. Create at least five options for the album select element. -->
+			<label for="album">Album:</label>
+			<select name="album">
+				<option value="">Pistol City Holiness</option>
+				<option value="">Bluesamericana</option>
+				<option value="">Live From Kegworth Studio</option>
+				<option value="">The Piano Guys</option>
+				<option value="">Hallelujah</option>
+				<option value="">Bach Trios</option>
+			</select>
 
 			<!-- Genre -->
 			<!-- Checkbox List (6) -->
+
+			<input type="checkbox" id="rock" value="rock"> <label for="rock">Rock</label>
+
+			<input type="checkbox" id="classical" value="classical"> <label for="classical">Classical</label>
+
+			<input type="checkbox" id="pop" value="pop"><label for="pop">Pop</label>
+
+			<input type="checkbox" id="jazz" value="jazz"> <label for="jazz">Jazz</label>
+
+			<input type="checkbox" id="blues" value="blues"><label for="blues">Blues</label><br>
+
+			<input type="checkbox" id="hiphop" value="hiphop"><label for="hiphop">Hip Hop</label><br>
 
 			<!-- Filter Button -->
 		</section>
 
 		<section class="rightBox">
 			<!-- 4. Pick your four favorite songs from the artists you have chosen and use the information for each in the list that's on the right-hand side. -->
-			<h1>Song Name</h1>
-			<p>Artist name | Album name | Genre</p>
-			<h1>Song Name</h1>
-			<p>Artist name | Album name | Genre</p>
-			<h1>Song Name</h1>
-			<p>Artist name | Album name | Genre</p>
-			<h1>Song Name</h1>
-			<p>Artist name | Album name | Genre</p>
+			<h1>Break</h1>
+			<p>Dave Perkins | Pistol City Holiness | Blues</p>
+			<h1>The Worst Is Yet To Come</h1>
+			<p>Keb' Mo' | Bluesamericana | Contemporary Blues</p>
+			<h1>Salvation Army Band</h1>
+			<p>Phil Keaggy | Live From Kegworth Studio | Rock</p>
+			<h1>Moonlight</h1>
+			<p>The Piano Guys | The Piano Guys | Pop</p>
+			<h1>Hallelujah</h1>
+			<p>Pentatonix | Hallelujah | Pop</p>
+			<h1>* take your pick *</h1>
+			<p>Yo-Yo Ma / Chris Thile / Edgar Meyer | Bach Trios | Classical</p>
+		</section>
 		</section>
 	</div>
 
