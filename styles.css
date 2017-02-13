@@ -2,10 +2,13 @@ body {
 	font-family: 'Arimo', sans-serif;
 }
 
+/*********************************************/
+/* STYLING FOR NAVBAR
+/*********************************************/
 .navbar {
-	width: 80%;
+	max-width: 80%;
 	display: block;
-	margin: 2% 10%;
+	margin: 2% 10% 1% 10%;
 	padding: 0 15px;
 	background-color: #FFB4B0;
 	border: 2px solid black;
@@ -17,13 +20,13 @@ ul.navbar {
   	justify-content: space-between;
 }
 
+.navbar li a.first-child {
+	margin-left: -25px;
+}
+
 /* Float the list items side by side */
 ul.navbar li {
 	display: inline;
-}
-
-.navbar li a.first-child {
-	margin-left: -25px;
 }
 
 /* Style the links inside the list items */
@@ -37,6 +40,32 @@ ul.navbar li a {
 
 
 
+/*********************************************/
+/* STYLING FOR MAIN CONTENT :: Box Containers
+/*********************************************/
+.mainContent {
+	max-width: 80%;
+	margin: 2% 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	align-items: stretch;
+  	justify-content: space-between;
+}
+
+.blueBox {
+	display: inline-block;
+	margin 0 10%;
+	width: 23%;
+	background-color: #4DD7FA;
+	border: 2px solid black;
+}
+
+.yellowBox {
+	width: 74%;
+	background-color: #FEFAC0;
+	border: 2px solid black;
+}
 
 
 
