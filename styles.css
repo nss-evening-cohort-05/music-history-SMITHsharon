@@ -69,4 +69,87 @@ ul.navbar li a {
 
 
 
+/*********************************************/
+/* STYLING FOR BLUE BOX
+/*********************************************/
+.boxHead  {
+	display: block;
+	margin-top: 10%;
+	margin-left: 6%;
+}
+
+/* Song Length <Slider> */
+.songLength {
+	margin: 5px 30px;
+}
+
+/* <Select> dropdowns */
+select {
+	width: 75%;
+	margin-left: 6%;
+	margin-bottom: 2%;
+}
+
+/* <Checkboxes> */
+/*.checkboxes {
+	margin-left: 6%;
+}
+
+.ckListCol1 {
+	/*width: 50%;*/
+/*	max-width: 50%;
+	display: inline;
+}
+
+.ckListCol2 {
+	margin-left: 30%;*/
+/*}*/
+
+/*.checklist {
+	display: inline;
+}*/
+
+/*ul.checklist {
+    list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	max-width: 80%;
+	margin-left: 6%;
+  	/*text-align: left;*/
+  	/*justify-content: space-between;*/
+	/*align-items: stretch;*/
+  	/*justify-content: space-between;*/
+}
+
+/*ul.checklist li {*/
+    /*display: inline-block;*/
+    /*margin-left: 5px;*/
+    /*padding: 14px 1px;*/
+/*}*/
+
+/****************************************/
+ul.checkbox {
+    width: 150px;
+}
+
+ul.checkbox li { 
+  width: 49%;
+  list-style: none;
+  float: left;
+  margin: 0;
+}
+
+
+/* <Filter> button */
+#filter {
+	margin: 20px auto;
+	padding: 1% 25%;
+	font-size: 1.1em;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+
+
 

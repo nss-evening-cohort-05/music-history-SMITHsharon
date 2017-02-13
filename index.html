@@ -21,49 +21,79 @@
 	<div class="mainContent">
 		<section class="blueBox">
 			<!-- slider -->
-			<label for="songLength">Song Length:</label>
+			<label class="boxHead" for="songLength">Song Length:</label>
             <input type="range" name="songLength" class="songLength">
 
 			<!-- Artist -->
 			<!-- 1. Create five options for the artist select element. -->
-			<label for="artist">Artist:</label>
+			<label class="boxHead" for="artist">Artist:</label>
 			<select name="artist">
-				<option value="">Dave Perkins</option>
-				<option value="">Keb' Mo'</option>
-				<option value="">Phil Keaggy</option>
-				<option value="">The Piano Guys</option>
-				<option value="">Pentatonix</option>
-				<option value="">Yo-Yo Ma / Chris Thile / Edgar Meyer</option>
+				<option value="Options">Options</option>
+				<option value="davePerkins">Dave Perkins</option>
+				<option value="kebMo">Keb' Mo'</option>
+				<option value="pKeaggy">Phil Keaggy</option>
+				<option value="pianoGuys">The Piano Guys</option>
+				<option value="pentatonix">Pentatonix</option>
+				<option value="yoyoma">Yo-Yo Ma / Chris Thile / Edgar Meyer</option>
 			</select>
 
 			<!-- Album -->
 			<!-- 2. Create at least five options for the album select element. -->
-			<label for="album">Album:</label>
+			<label class="boxHead" for="album">Album:</label>
 			<select name="album">
-				<option value="">Pistol City Holiness</option>
-				<option value="">Bluesamericana</option>
-				<option value="">Live From Kegworth Studio</option>
-				<option value="">The Piano Guys</option>
-				<option value="">Hallelujah</option>
-				<option value="">Bach Trios</option>
+				<option value="Options">Options</option>
+				<option value="pistolCity">Pistol City Holiness</option>
+				<option value="bluesamerica">Bluesamericana</option>
+				<option value="kegworth">Live From Kegworth Studio</option>
+				<option value="pianoGuys">The Piano Guys</option>
+				<option value="hallelujah">Hallelujah</option>
+				<option value="bach">Bach Trios</option>
 			</select>
 
 			<!-- Genre -->
-			<!-- Checkbox List (6) -->
+			<!-- Checkbox List (6) -->	
+			<!-- <label class="boxHead" for="genre">Genre:</label>
+			<table class="checkboxes">
+				<tr>
+					<td class="ckListCol1"><input type="checkbox" id="rock" value="rock"> <label for="rock">Rock</label></td>
+					<td class="ckListCol2"><input type="checkbox" id="rock" value="rock"> <label for="rock">Rock</label></td>
+				</tr>
+				<tr>
+					<td class="ckListCol1"><input type="checkbox" id="pop" value="pop"><label for="pop">Pop</label></td>
+					<td class="ckListCol2"><input type="checkbox" id="jazz" value="jazz"> <label for="jazz">Jazz</label></td>
+				</tr>
+				<tr>
+					<td class="ckListCol1"><input type="checkbox" id="blues" value="blues"><label for="blues">Blues</label></td>
+					<td class="ckListCol2"><input type="checkbox" id="hiphop" value="hiphop"><label for="hiphop">Hip Hop</label></td>
+				</tr>
+			</table> -->
 
-			<input type="checkbox" id="rock" value="rock"> <label for="rock">Rock</label>
+			<section class="checkboxes">
+			<label class="boxHead" for="genre">Genre:</label>
+				<ul class="checkbox">
+					<li><input type="checkbox" id="rock" value="rock"> <label for="rock">Rock</label>
+					</li>
 
-			<input type="checkbox" id="classical" value="classical"> <label for="classical">Classical</label>
+					<li><input type="checkbox" id="classical" value="classical"> <label for="classical">Classical</label>
+					</li>
 
-			<input type="checkbox" id="pop" value="pop"><label for="pop">Pop</label>
+					<li><input type="checkbox" id="pop" value="pop"><label for="pop">Pop</label>
+					</li>
 
-			<input type="checkbox" id="jazz" value="jazz"> <label for="jazz">Jazz</label>
+					<li><input type="checkbox" id="jazz" value="jazz"> <label for="jazz">Jazz</label>
+					</li>
 
-			<input type="checkbox" id="blues" value="blues"><label for="blues">Blues</label><br>
+					<li><input type="checkbox" id="blues" value="blues"><label for="blues">Blues</label>
+					</li>
 
-			<input type="checkbox" id="hiphop" value="hiphop"><label for="hiphop">Hip Hop</label><br>
+					<li><input type="checkbox" id="hiphop" value="hiphop"><label for="hiphop">Hip Hop</label>
+					</li>
+				</ul>
+			</section>
 
 			<!-- Filter Button -->
+			<button type="submit" id="filter" value="Filter">Filter</button>
+
 		</section>
 
 		<section class="yellowBox">
