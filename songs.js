@@ -70,10 +70,14 @@ replaceChar (">", "-", songs);
 console.log(songs);
 
 
+//***************************************************
 // 4. Must add each string to the DOM in index.html in the main content area.
+//***************************************************
 
+function writeHTML (array) {
+	var songTitle = document.getElementsByClassNames["songTitle"];
+	var songCredits = document.getElementsByClassNames["songCredit"];
+}
 
-
-
-
+writeHTML(songs);
 
