@@ -33,28 +33,40 @@ addSong(newSong2, songs, "end");
 // ie :: remove :: * @ ( !
 //***************************************************
 
-function removeChar(z, array) {
-console.log("in removeChar");
+function removeChar (z, array) {
 	for (var i=0; i<array.length; i++) {
-		for (var j=0; j<array[i].length; j++) {
-			// var charIndex = "null";
-			var newString = "";
-			if (array[j] === z) { // finds the character in the string to remove
+	
+		charIndex = array[i].indexOf(z);
+		var newString = "";
+		if (charIndex !== -1) { // found the character to be removed
 							    // assumes the character occurs only once in the string
-				console.log("inside nested for loop / array[j] :: j:", j, ", ", array[j]);
-				newString = array[i].substring(0,j) + array[i].substring(j+1);
-				j = array[i].length;
-			}
+			array[i] = array[i].substring(0,charIndex) + array[i].substring(charIndex+1);
 		}
 	}
 }
 
 removeChar("*", songs);
+removeChar("@", songs);
+removeChar("(", songs);
+removeChar("!", songs);
 console.log(songs);
 
+
+//***************************************************
 // 3. Students must find and replace the > character in each item with a - character.
+//***************************************************
 
+function replaceChar (olcChar, newChar, array) {
 
+}
+
+replaceChar (>, -, songs);
 
 
 // 4. Must add each string to the DOM in index.html in the main content area.
+
+
+
+
+
+
