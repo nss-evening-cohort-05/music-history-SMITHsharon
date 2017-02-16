@@ -1,0 +1,133 @@
+body {
+	font-family: 'Arimo', sans-serif;
+}
+
+/*********************************************/
+/* STYLING FOR NAVBAR
+/*********************************************/
+.navbar {
+	max-width: 80%;
+	display: block;
+	margin: 2% 10% 1% 10%;
+	padding: 0 15px;
+	background-color: #FFB4B0;
+	border: 2px solid black;
+}
+
+ul.navbar {
+    list-style-type: none;
+  	text-align: left;
+  	justify-content: space-between;
+}
+
+.navbar li a.first-child {
+	margin-left: -25px;
+}
+
+/* Float the list items side by side */
+ul.navbar li {
+	display: inline;
+}
+
+/* Style the links inside the list items */
+ul.navbar li a {
+    display: inline-block;
+    margin: 0;
+    padding: 14px 1px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+
+/*********************************************/
+/* STYLING FOR MAIN CONTENT :: Box Containers
+/*********************************************/
+.mainContent {
+	max-width: 80%;
+	margin: 2% 10%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+  	justify-content: space-between;
+}
+
+.blueBox {
+	display: inline-block;
+	margin 0 10%;
+	width: 23%;
+	background-color: #4DD7FA;
+	border: 2px solid black;
+}
+
+.yellowBox {
+	width: 74%;
+	background-color: #FEFAC0;
+	border: 2px solid black;
+}
+
+
+
+/*********************************************/
+/* STYLING FOR BLUE BOX
+/*********************************************/
+.boxHead  {
+	display: block;
+	margin-top: 10%;
+	margin-left: 6%;
+}
+
+/* Song Length <Slider> */
+.songLength {
+	margin: 5px 30px;
+}
+
+/* <Select> dropdowns */
+select {
+	width: 75%;
+	margin-left: 6%;
+	margin-bottom: 2%;
+}
+
+/* <Checkboxes> */
+ul.checkbox {
+	margin-top: 0;
+}
+
+ul.checkbox li { 
+	width: 45%;
+	list-style: none;
+	float: left;
+}
+
+/* <Filter> button */
+#filter {
+	display: block;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1% 25%;
+	font-size: 1.1em;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+
+
+/*********************************************/
+/* STYLING FOR YELLOW BOX
+/*********************************************/
+
+.songTitle {
+	margin-left: 20px;
+	margin-bottom: 0;
+	font-size: 1.4em;
+}
+
+.songCredit {
+	margin-top: 6px;
+	margin-left: 20px;
+}
+
+
+
