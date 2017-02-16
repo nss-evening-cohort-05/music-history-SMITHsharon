@@ -75,8 +75,14 @@ console.log(songs);
 //***************************************************
 
 function writeHTML (array) {
-	var songTitle = document.getElementsByClassNames["songTitle"];
-	var songCredits = document.getElementsByClassNames["songCredit"];
+	var sTitle = document.getElementsByClassName["songTitle"];
+	var sCredits = document.getElementsByClassName["songCredit"];
+	// console.log("songTitle", songTitle);
+	// console.log("songCredit", songCredit);
+	console.log("array[0] :: ", array[0]);
+	sTitle.innerHTML = array[0];
+
+	// newString = "<h1>" + songTitle.innerTitle + "</h1><p>" + songCredits + "</p";
 }
 
 writeHTML(songs);
