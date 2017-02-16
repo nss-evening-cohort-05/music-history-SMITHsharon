@@ -40,6 +40,8 @@ function removeChar (z, array) {
 		var newString = "";
 		if (charIndex !== -1) { // found the character to be removed
 							    // assumes the character occurs only once in the string
+
+//QUESTION :: IF CHANGING CONTENTS OF AN ARRAY, DO YOU NEED TO <RETURN> ? 
 			array[i] = array[i].substring(0,charIndex) + array[i].substring(charIndex+1);
 		}
 	}
@@ -56,11 +58,16 @@ console.log(songs);
 // 3. Students must find and replace the > character in each item with a - character.
 //***************************************************
 
-function replaceChar (olcChar, newChar, array) {
+function replaceChar (oldChar, newChar, array) {
+	for (var i=0; i<array.length; i++) {
 
+		//QUESTION :: IF CHANGING CONTENTS OF AN ARRAY, DO YOU NEED TO <RETURN> ? 
+		array[i] = array[i].replace(oldChar, newChar);
+	}
 }
 
-replaceChar (>, -, songs);
+replaceChar (">", "-", songs);
+console.log(songs);
 
 
 // 4. Must add each string to the DOM in index.html in the main content area.
