@@ -56,12 +56,13 @@ removeChar("!", songs);
 // 3. Students must find and replace the > character in each item with a - character.
 //***************************************************
 
-function replaceChar (oldChar, newChar, array) {
+function replaceChar (z, a, array) {
 	for (var i=0; i<array.length; i++) {
 
 //QUESTION :: IF CHANGING CONTENTS OF AN ARRAY, DO YOU NEED TO <RETURN> ? 
 //how does <map> function fit in with this? 
-		array[i] = array[i].replace(oldChar, newChar);
+		// array[i] = array[i].replace(z, a);
+		array[i] = array[i].replace(z, a)
 	}
 }
 
@@ -82,7 +83,8 @@ function writeHTML (sArray) {
 		charIndex = sArray[i].indexOf("-");
 
 		tempSongStr = sArray[i].substr(0, charIndex-1); // tempSong === Song
-		tempCreditStr += sArray[i].substr(charIndex+5); // tempCredit
+		tempCreditStr = sArray[i].substr(charIndex+5); // tempCredit
+		tempCreditStr = tempCreditStr.replace("on the album", "|");
 
 		tempSong = document.getElementsByClassName("songTitle")[i];
 		tempCredit = document.getElementsByClassName("songCredit")[i];
