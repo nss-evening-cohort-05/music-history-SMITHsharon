@@ -6,7 +6,6 @@ songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album Th
 songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction"; // songs[3]
 songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill"; // songs[4]
 
-console.log(songs);
 
 //***************************************************
 // 1. Each student must add one song to the beginning and the end of the array.
@@ -25,7 +24,6 @@ var newSong2 = "Georgia On My Mind - by Ray Charles on the album Genius The Ulti
 
 addSong(newSong1, songs, "beginning");
 addSong(newSong2, songs, "end");
-// console.log(songs);
 
 
 //***************************************************
@@ -52,7 +50,6 @@ removeChar("*", songs);
 removeChar("@", songs);
 removeChar("(", songs);
 removeChar("!", songs);
-// console.log(songs);
 
 
 //***************************************************
@@ -69,7 +66,6 @@ function replaceChar (oldChar, newChar, array) {
 }
 
 replaceChar (">", "-", songs);
-// console.log(songs);
 
 
 //***************************************************
@@ -80,20 +76,21 @@ replaceChar (">", "-", songs);
 function writeHTML (sArray) {
 	var tempSongStr = "";
 	var tempCreditStr = ""
-	console.log(sArray);
+	var tempSong = document.getElementsByClassName("songTitle")[i];
+	var tempCredit = document.getElementsByClassName("songCredit")[i];
 	for (var i=0; i<sArray.length; i++) {
 		charIndex = sArray[i].indexOf("-");
+
 		tempSongStr = sArray[i].substr(0, charIndex-1); // tempSong === Song
-		console.log("tempSongStr :: ", tempSongStr);
 		tempCreditStr += sArray[i].substr(charIndex+5); // tempCredit
-		console.log("tempCreditStr :: ", tempCreditStr);
-		console.log("tempSong for i :: ", i, "th ", tempSongStr);
-		console.log("tempCredit for i :: ", i, "th ", tempCreditStr);
-		var tempSong = document.getElementsByClassName("songTitle")[i];
-		var tempCredit = document.getElementsByClassName("songCredit")[i];
-		tempSong.innerHTML = tempSongStr;
-		tempCredit.innerHTML= tempCreditStr;
-		tempSongStr = "";
+
+		tempSong = document.getElementsByClassName("songTitle")[i];
+		tempCredit = document.getElementsByClassName("songCredit")[i];
+
+		tempSong.innerHTML = tempSongStr;		// write the temporary strings 
+		tempCredit.innerHTML= tempCreditStr;	// to the DOM
+
+		tempSongStr = "";	// reinitialize temporary strings to empty strings
 		tempCreditStr = "";
 	}
 }
