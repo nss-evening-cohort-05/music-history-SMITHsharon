@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Music History</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+
   <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 </head>
 
@@ -22,12 +23,13 @@
 	<div class="mainContent">
 		<section class="blueBox">
 			<!-- slider -->
-			<label class="boxHead" for="songLength">Song Length:</label>
+			<label class="boxHead">Song Length:</label>
+
             <input type="range" name="songLength" class="songLength">
 
 			<!-- Artist -->
 			<!-- 1. Create five options for the artist select element. -->
-			<label class="boxHead" for="artist">Artist:</label>
+			<label class="boxHead">Artist:</label>
 			<select name="artist">
 				<option value="Options">Options</option>
 				<option value="davePerkins">Dave Perkins</option>
@@ -40,7 +42,7 @@
 
 			<!-- Album -->
 			<!-- 2. Create at least five options for the album select element. -->
-			<label class="boxHead" for="album">Album:</label>
+			<label class="boxHead">Album:</label>
 			<select name="album">
 				<option value="Options">Options</option>
 				<option value="pistolCity">Pistol City Holiness</option>
@@ -52,26 +54,26 @@
 			</select>
 
 			<section class="checkboxes">
-			<label class="boxHead" for="genre">Genre:</label>
-				<ul class="checkbox">
-					<li><input type="checkbox" id="rock" value="rock"><label for="rock">Rock</label>
-					</li>
+				<label class="boxHead">Genre:</label>
+					<ul class="checkbox">
+						<li><input type="checkbox" id="rock" value="rock"><label for="rock">Rock</label>
+						</li>
 
-					<li><input type="checkbox" id="classical" value="classical"><label for="classical">Classical</label>
-					</li>
+						<li><input type="checkbox" id="classical" value="classical"><label for="classical">Classical</label>
+						</li>
 
-					<li><input type="checkbox" id="pop" value="pop"><label for="pop">Pop</label>
-					</li>
+						<li><input type="checkbox" id="pop" value="pop"><label for="pop">Pop</label>
+						</li>
 
-					<li><input type="checkbox" id="jazz" value="jazz"><label for="jazz">Jazz</label>
-					</li>
+						<li><input type="checkbox" id="jazz" value="jazz"><label for="jazz">Jazz</label>
+						</li>
 
-					<li><input type="checkbox" id="blues" value="blues"><label for="blues">Blues</label>
-					</li>
+						<li><input type="checkbox" id="blues" value="blues"><label for="blues">Blues</label>
+						</li>
 
-					<li><input type="checkbox" id="hiphop" value="hiphop"><label for="hiphop">Hip Hop</label>
-					</li>
-				</ul>
+						<li><input type="checkbox" id="hiphop" value="hiphop"><label for="hiphop">Hip Hop</label>
+						</li>
+					</ul>
 			</section>
 
 			<!-- Filter Button -->
@@ -94,9 +96,13 @@
 			<p class="songCredit">Pentatonix | Hallelujah | Pop</p>
 			<h1 class="songTitle">* take your pick *</h1>
 			<p class="songCredit">Yo-Yo Ma / Chris Thile / Edgar Meyer | Bach Trios | Classical</p>
+			<h1 class="songTitle">Dazed and Confused</h1>
+			<p class="songCredit">Led Zeppelin | Mothership | Rock</p>
 		</section>
-		</section>
-	</div>
+
+	</div> 
+
+	<script type="text/javascript" src="songs.js"></script>
 
 </body>
 </html>

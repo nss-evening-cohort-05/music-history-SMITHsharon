@@ -64,6 +64,7 @@ ul.navbar li a {
 	width: 74%;
 	background-color: #FEFAC0;
 	border: 2px solid black;
+	overflow: auto;
 }
 
 
@@ -107,7 +108,7 @@ ul.checkbox li {
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1% 25%;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	border: 1px solid black;
 	border-radius: 5px;
 }
@@ -121,7 +122,7 @@ ul.checkbox li {
 .songTitle {
 	margin-left: 20px;
 	margin-bottom: 0;
-	font-size: 1.4em;
+	font-size: 1.2em;
 }
 
 .songCredit {
