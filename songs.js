@@ -34,13 +34,11 @@ addSong(newSong2, songs, "end");
 function removeChar (z, array) {
 	for (var i=0; i<array.length; i++) {
 	
-		charIndex = array[i].indexOf(z);
+		// var charIndex = array[i].indexOf(z);
+		var charIndex = array[i].indexOf(z);
 		var newString = "";
 		if (charIndex !== -1) { // found the character to be removed
 							    // assumes the character occurs only once in the string
-
-//QUESTION :: IF CHANGING CONTENTS OF AN ARRAY, DO YOU NEED TO <RETURN> ? 
-//how does <map> function fit in with this? 
 			array[i] = array[i].substring(0,charIndex) + array[i].substring(charIndex+1);
 		}
 	}
@@ -58,9 +56,7 @@ removeChar("!", songs);
 
 function replaceChar (z, a, array) {
 	for (var i=0; i<array.length; i++) {
-
-//QUESTION :: IF CHANGING CONTENTS OF AN ARRAY, DO YOU NEED TO <RETURN> ? 
-//how does <map> function fit in with this? 
+		
 		// array[i] = array[i].replace(z, a);
 		array[i] = array[i].replace(z, a)
 	}
