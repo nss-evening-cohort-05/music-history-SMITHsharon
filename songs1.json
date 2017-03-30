@@ -1,0 +1,23 @@
+
+{
+	"songs1": [
+		{
+			"name": "Break",
+			"artist": "Dave Perkins",
+			"album": "Pistol City Holiness",
+			"genre": "Blues"
+		},
+		{
+			"name": "The Worst Is Yet To Come",
+			"artist": "Keb' Mo'",
+			"album": "Bluesamericana",
+			"genre": "Contemporary Blues"
+		},
+		{
+			"name": "Salvation Army Band",
+			"artist": "Phil Keaggy",
+			"album": "Live From Kegworth Studio",
+			"genre": "Rock"
+		}
+	]		
+}

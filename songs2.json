@@ -1,0 +1,41 @@
+
+{
+	"songs2": [
+		{
+			"name": "Moonlight",
+			"artist": "The Piano Guys",
+			"album": "The Piano Guys",
+			"genre": "Pop"
+		},
+		{
+			"name": "Hallelujah",
+			"artist": "Pentatonix",
+			"album": "Hallelujah",
+			"genre": "Pop"
+		},
+		{
+			"name": "* take your pick *",
+			"artist": "Yo-Yo Ma / Chris Thile / Edgar Meyer",
+			"album": "Bach Trios",
+			"genre": "Classical"
+		},
+		{
+			"name": "Dazed and Confused",
+			"artist": "Led Zeppelin",
+			"album": "Mothership",
+			"genre": "Rock"
+		},
+		{
+			"name": "I Can't Help You Now",
+			"artist": "Bonnie Raitt",
+			"album": "Silver Lining",
+			"genre": "Blues"
+		},
+		{
+			"name": "Georgia On My Mind",
+			"artist": "Ray Charles",
+			"album": "Genius The Ultimate Ray Charles Collection",
+			"genre": "Blues"
+		}
+	]		
+}
