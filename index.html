@@ -12,23 +12,24 @@
 <body>
 	<nav>
 		<ul class="navbar">
-		<!-- 3. The links in the navigation bar don't need to link to anything just yet, 
-		you can use <a href="#">View music</a> for now -->
-			<li><a href="#">View Music</a></li>
-			<li>| <a href="#"> Add Music</a></li>
-			<li>| <a href="#"> Profile</a></li>
+<!-- <li><a href="#" id="link-home">Home</a></li> -->
+			<li><a href="#" id="link-list">List</a></li>
+			<li>| <a href="#" id="link-add">Add</a></li>
 		</ul>
 	</nav>
 
 	<div class="mainContent">
+
+		<!-- <section id="home-view">
+		  Home
+		</section> -->
+
 		<section class="blueBox">
 			<!-- slider -->
 			<label class="boxHead">Song Length:</label>
 
             <input type="range" name="songLength" class="songLength">
 
-			<!-- Artist -->
-			<!-- 1. Create five options for the artist select element. -->
 			<label class="boxHead">Artist:</label>
 			<select name="artist">
 				<option value="Options">Options</option>
@@ -40,9 +41,12 @@
 				<option value="yoyoma">Yo-Yo Ma / Chris Thile / Edgar Meyer</option>
 			</select>
 
-			<!-- Album -->
-			<!-- 2. Create at least five options for the album select element. -->
-			<label class="boxHead">Album:</label>
+
+			<!-- <section class="hidden" id="list-view"> 
+			  List
+			</section> -->
+
+			<label class="boxHead hidden" id="list-view">Album:</label>
 			<select name="album">
 				<option value="Options">Options</option>
 				<option value="pistolCity">Pistol City Holiness</option>
@@ -76,6 +80,12 @@
 					</ul>
 			</section>
 
+
+			<section class="hidden" id="add-view">
+				<!-- Music History 3 ... skipping over this piece -->
+<!-- <button type="add" id="addButon" value="Filter">Add Song</button> -->
+			</section>
+
 			<!-- Filter Button -->
 			<div style="clear: both"></div>
 			<button type="submit" id="filter" value="Filter">Filter</button>
@@ -102,7 +112,10 @@
 
 	</div> 
 
-	<script type="text/javascript" src="songs.js"></script>
+	<!-- <script type="text/javascript" src="songs.js"></script> -->
+	<script type="text/javascript" src="home.js"></script>
+	<script type="text/javascript" src="list.js"></script>
+	<script type="text/javascript" src="add.js"></script>
 
 </body>
 </html>
