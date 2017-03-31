@@ -71,6 +71,7 @@ ul.navbar li a {
 }
 
 
+
 .yellowBox {
 	width: 74%;
 	background-color: #FEFAC0;
@@ -78,6 +79,14 @@ ul.navbar li a {
 	overflow: auto;
 }
 
+#addSongsContainer {
+	width: 74%;
+}
+
+
+input {
+	margin-top: 2%;
+}
 
 
 /*********************************************/
@@ -125,7 +134,7 @@ ul.checkbox li {
 	border-radius: 28px;
 }
 
-#moreButton {
+#moreButton, #addButton {
 	justify-content: center;
 	border-radius: 28px;
 	max-width: 100px;
@@ -133,7 +142,16 @@ ul.checkbox li {
 	padding: 10px 20px 10px 20px;
 }
 
-#moreButton:active, #moreButton:focus, #filter:active, #filter:focus {
+.addDiv {
+	/*justify-content: center;*/
+	margin-top: 5%;
+	margin-left: auto;
+	padding-left: 25%;
+	/*padding: 10px 20px 10px 20px;*/
+}
+
+
+#moreButton:active, #moreButton:focus, #filter:active, #filter:focus, #addButton:active, #addButton:focus {
 	outline: none;
 }
 
