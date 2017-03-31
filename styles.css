@@ -40,14 +40,6 @@ ul.navbar li a {
 }
 
 
-.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
 
 /*********************************************/
 /* STYLING FOR MAIN CONTENT :: Box Containers
@@ -79,14 +71,25 @@ ul.navbar li a {
 	overflow: auto;
 }
 
+
 #addSongsContainer {
+	margin-left: 25%;
 	width: 74%;
+	font-size: 1.2em;
 }
 
 
 input {
 	margin-top: 2%;
 }
+
+
+.addDiv {
+	margin-top: 5%;
+	margin-left: auto;
+	padding-left: 25%;
+}
+
 
 
 /*********************************************/
@@ -121,7 +124,11 @@ ul.checkbox li {
 	float: left;
 }
 
-/* <Filter> button */
+
+
+/*********************************************/
+/* buttons */
+/*********************************************/
 #filter, #moreButton {
 	display: block;
 	margin-top: 20px;
@@ -134,20 +141,13 @@ ul.checkbox li {
 	border-radius: 28px;
 }
 
+
 #moreButton, #addButton {
 	justify-content: center;
 	border-radius: 28px;
 	max-width: 100px;
 	margin: 5% auto;
 	padding: 10px 20px 10px 20px;
-}
-
-.addDiv {
-	/*justify-content: center;*/
-	margin-top: 5%;
-	margin-left: auto;
-	padding-left: 25%;
-	/*padding: 10px 20px 10px 20px;*/
 }
 
 
@@ -170,6 +170,19 @@ ul.checkbox li {
 .songCredit {
 	margin-top: 6px;
 	margin-left: 20px;
+}
+
+
+
+/*********************************************/
+/* display or hide the <blue> and <yellow> content areas
+/*********************************************/
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 

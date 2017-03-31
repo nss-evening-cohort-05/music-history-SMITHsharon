@@ -65,9 +65,3 @@ function addNewSong () {
 	});
 }
 
-
- 
-
-  
-
-
