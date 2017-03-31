@@ -1,5 +1,5 @@
 var listLink = document.getElementById("link-list");
-var listView = document.getElementById("list-view");
+var listView = document.getElementById("songListContainer");
 
 listLink.addEventListener("click", function(event) {
   event.preventDefault();
@@ -7,4 +7,6 @@ listLink.addEventListener("click", function(event) {
 
   listView.classList.add("visible");
   listView.classList.remove("hidden");
+
+  writeToDOM(songs);
 });

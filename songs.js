@@ -16,7 +16,7 @@ var idCounter = 0;
 // that is dynamically written
 //***************************************************
 function writeToDOM (songsData) {
-
+console.log("writoToDOM");
 	var songString = "";
 	var currentSong;
 
