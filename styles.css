@@ -39,16 +39,6 @@ ul.navbar li a {
     font-size: 17px;
 }
 
-/*********************************/
-/* provided snippets */
-/*********************************/
-/*ul > li {
-  display: inline;
-  list-style-type: none;
-  margin: 5px 15px 0 15px;
-  background-color: goldenrod;
-  padding: 5px;
-}*/
 
 .visible {
   display: block;
@@ -57,10 +47,6 @@ ul.navbar li a {
 .hidden {
   display: none;
 }
-
-/*********************************/
-/* provided snippets */
-/*********************************/
 
 
 /*********************************************/
@@ -75,13 +61,6 @@ ul.navbar li a {
   	justify-content: space-between;
 }
 
-/*#list-view {
-display: inline-block;
-	margin 0 10%;
-	width: 23%;
-	background-color: #4DD7FA;
-	border: 2px solid black;
-}*/
 
 .blueBox {
 	display: inline-block;
@@ -91,12 +70,6 @@ display: inline-block;
 	border: 2px solid black;
 }
 
-/*#list-view {
-	width: 74%;
-	background-color: #FEFAC0;
-	border: 2px solid black;
-	overflow: auto;
-}*/
 
 .yellowBox {
 	width: 74%;
@@ -158,6 +131,10 @@ ul.checkbox li {
 	max-width: 100px;
 	margin: 5% auto;
 	padding: 10px 20px 10px 20px;
+}
+
+#moreButton:active, #moreButton:focus, #filter:active, #filter:focus {
+	outline: none;
 }
 
 

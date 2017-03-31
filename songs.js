@@ -1,29 +1,24 @@
 
+// lists the set of JSON files that have been defined
+const JSONList = ["songs1.json", "songs2.json"];
+var JSONsLoaded = 0;
+var loadThisFile;
+var allLoaded = false;
+
 var songListContainer = document.getElementById("songListContainer");
 var songs = [];
 var idCounter = 0;
 
 
 //***************************************************
-// 4. Must add each string to the DOM in index.html in the main content area.
-// What is hard-coded goes away entirely.
+// Function writes contents of <songs> array to the DOM
+// Establishes Event Listener for the <More> button
+// that is dynamically written
 //***************************************************
-
 function writeToDOM (songsData) {
-console.log("songsData :: ", songsData);
+
 	var songString = "";
 	var currentSong;
-
-	// if multiple files, this would be generalized 
-	// to append correct number to the *songs* strong
-	// if (parsed === 1) {
-	// 	songsArray = "songs1";
-	// } else { // second call
-	// 	songsArray = "songs2";
-	// }
-
-// var tempSong = document.getElementsByClassName("songTitle")[i];
-// var tempCredit = document.getElementsByClassName("songCredit")[i];
 
 	songString = "";
 	for (var i=0; i<songsData.length; i++) {
@@ -34,43 +29,23 @@ console.log("songsData :: ", songsData);
 		songString += `${currentSong.genre }`;
 	}
 	songString += `<div><button type="more" id="moreButton" value="More">More</button></div>`;
-	// songString += `</section>`;
 
 	songListContainer.innerHTML = songString;
 
-//***************************************************
-// Event Handler for <More> button
-//***************************************************
-var moreButton = document.getElementById("moreButton");
+	//***************************************************
+	// Event Handler for <More> button
+	//***************************************************
+	var moreButton = document.getElementById("moreButton");
 
-moreButton.addEventListener("click", function() {
-    loadJSON ("songs2.JSON", 2);
-});
+	moreButton.addEventListener("click", function() {
+	    if (!allLoaded) { 
+	    	loadJSON(loadNextJSONFile());
+	    } else {
+	    	alert("All songs have been loaded");
+	    }
+	});
 }
 
-
-//***************************************************
-// Function pushes the set of data parsed from JSON file
-// to <songs> array
-//***************************************************
-// function pushSongsArray(tempSongs) {
-// console.log("tempSongs :: ", tempSongs);
-// console.log("parsed :: ", parsed);
-
-	// if multiple files, this would be generalized 
-	// to append correct number to the *songs* strong
-	// if (parsed === 1) {
-	// 	songsArray = "songs1";
-	// } else { // second call
-	// 	songsArray = "songs2";
-	// }
-
-// console.log("JSONdata.songsArray :: ", JSONdata.songsArray);
-
-// 	for (var i in tempSongs) {
-// 		songs.push(tempSongs[songs1][i]);
-// 	}
-// }
 
 
 //***************************************************
@@ -79,15 +54,11 @@ moreButton.addEventListener("click", function() {
 //***************************************************
 function parseSongsJSON(){
 
-	// var tempSongsArray = [];
-
-	// console.log("It worked!!!", this.responseText);
 	var data = JSON.parse(this.responseText);
-console.log("It worked!!! :: data :: ", data);
-	// let data = JSON.parse(this.responseText);
-	data = data.songs1;
 
-// console.log("data :: ", data);
+	var arrayIdentifier = "songs" + JSONsLoaded;
+	data = data[arrayIdentifier];
+
 	data.forEach(each => each.id = getID());
     data.forEach(each => songs.push(each));
 
@@ -117,35 +88,24 @@ function loadJSON (jsonFile) {
 	myRequest.send();
 }
 
-// loadJSON("songs1.JSON");
 
 function loadNextJSONFile () { 
 
     if (JSONList.length > JSONsLoaded) { 
+
         loadThisFile = JSONsLoaded;
         JSONsLoaded++;
+
+        if (JSONList.length === JSONsLoaded) {
+        	allLoaded = true;
+        }
         return JSONList[loadThisFile];
 
     } else {
-        return null;
+        return true; // all (2) files have been loaded;
     }
 }
 
-// lists the set of JSON files that have been defined
-const JSONList = ["songs1.json", "songs2.json"];
-var loadThisFile;
-var JSONsLoaded = 0;
-
 loadJSON(loadNextJSONFile());
-
-
-//***************************************************
-// Event Handler for <More> button
-//***************************************************
-// var moreButton = document.getElementById("moreButton");
-
-// moreButton.addEventListener("click", function() {
-//     loadJSON ("songs2.JSON", 2);
-// });
 
 
