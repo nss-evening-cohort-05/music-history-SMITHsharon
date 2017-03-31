@@ -1,68 +1,7 @@
+
+var songListContainer = document.getElementById("songListContainer");
 var songs = [];
-
-// songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator"; // songs[0]
-// songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America"; // songs[1]
-// songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall"; // songs[2]
-// songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction"; // songs[3]
-// songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill"; // songs[4]
-
-
-//***************************************************
-// 1. Each student must add one song to the beginning and the end of the array.
-//***************************************************
-
-// function addSong (song, songs, where) {
-// 	if (where === "beginning") {
-// 		songs.unshift(song);
-// 	} else { // where === "end"
-// 		songs.push(song);
-// 	}
-// }
-
-// var newSong1 = "I Can't Help You Now - by Bonnie Raitt on the album Silver Lining";
-// var newSong2 = "Georgia On My Mind - by Ray Charles on the album Genius The Ultimate Ray Charles Collection";
-
-// addSong(newSong1, songs, "beginning");
-// addSong(newSong2, songs, "end");
-
-
-//***************************************************
-// 2. Loop over the array and remove any words or characters that obviously don't belong.
-// ie :: remove :: * @ ( !
-//***************************************************
-
-// function removeChar (z, array) {
-// 	for (var i=0; i<array.length; i++) {
-	
-// 		// var charIndex = array[i].indexOf(z);
-// 		var charIndex = array[i].indexOf(z);
-// 		var newString = "";
-// 		if (charIndex !== -1) { // found the character to be removed
-// 							    // assumes the character occurs only once in the string
-// 			array[i] = array[i].substring(0,charIndex) + array[i].substring(charIndex+1);
-// 		}
-// 	}
-// }
-
-// removeChar("*", songs);
-// removeChar("@", songs);
-// removeChar("(", songs);
-// removeChar("!", songs);
-
-
-//***************************************************
-// 3. Students must find and replace the > character in each item with a - character.
-//***************************************************
-
-// function replaceChar (z, a, array) {
-// 	for (var i=0; i<array.length; i++) {
-		
-// 		// array[i] = array[i].replace(z, a);
-// 		array[i] = array[i].replace(z, a)
-// 	}
-// }
-
-// replaceChar (">", "-", songs);
+var idCounter = 0;
 
 
 //***************************************************
@@ -70,45 +9,101 @@ var songs = [];
 // What is hard-coded goes away entirely.
 //***************************************************
 
-function writeHTML (sArray) {
-	var tempSongStr = "";
-	var tempCreditStr = ""
-	var tempSong = document.getElementsByClassName("songTitle")[i];
-	var tempCredit = document.getElementsByClassName("songCredit")[i];
-	for (var i=0; i<sArray.length; i++) {
-		charIndex = sArray[i].indexOf("-");
+function writeToDOM (songsData) {
+console.log("songsData :: ", songsData);
+	var songString = "";
+	var currentSong;
 
-		tempSongStr = sArray[i].substr(0, charIndex-1); // tempSong === Song
-		tempCreditStr = sArray[i].substr(charIndex+5); // tempCredit
-		tempCreditStr = tempCreditStr.replace("on the album", "|");
+	// if multiple files, this would be generalized 
+	// to append correct number to the *songs* strong
+	// if (parsed === 1) {
+	// 	songsArray = "songs1";
+	// } else { // second call
+	// 	songsArray = "songs2";
+	// }
 
-		tempSong = document.getElementsByClassName("songTitle")[i];
-		tempCredit = document.getElementsByClassName("songCredit")[i];
+// var tempSong = document.getElementsByClassName("songTitle")[i];
+// var tempCredit = document.getElementsByClassName("songCredit")[i];
 
-		tempSong.innerHTML = tempSongStr;		// write the temporary strings 
-		tempCredit.innerHTML= tempCreditStr;	// to the DOM
+	songString = "";
+	for (var i=0; i<songsData.length; i++) {
+		currentSong = songsData[i];
 
-		tempSongStr = "";	// reinitialize temporary strings to empty strings
-		tempCreditStr = "";
+		songString += `<h1 class="songTitle">${currentSong.name}</h1>`;
+		songString += `<p class="songCredit">${currentSong.artist} | ${currentSong.album} | `;
+		songString += `${currentSong.genre }`;
 	}
+	songString += `<div><button type="more" id="moreButton" value="More">More</button></div>`;
+	// songString += `</section>`;
+
+	songListContainer.innerHTML = songString;
+
+//***************************************************
+// Event Handler for <More> button
+//***************************************************
+var moreButton = document.getElementById("moreButton");
+
+moreButton.addEventListener("click", function() {
+    loadJSON ("songs2.JSON", 2);
+});
 }
 
 
-// writeHTML(songs);
+//***************************************************
+// Function pushes the set of data parsed from JSON file
+// to <songs> array
+//***************************************************
+// function pushSongsArray(tempSongs) {
+// console.log("tempSongs :: ", tempSongs);
+// console.log("parsed :: ", parsed);
+
+	// if multiple files, this would be generalized 
+	// to append correct number to the *songs* strong
+	// if (parsed === 1) {
+	// 	songsArray = "songs1";
+	// } else { // second call
+	// 	songsArray = "songs2";
+	// }
+
+// console.log("JSONdata.songsArray :: ", JSONdata.songsArray);
+
+// 	for (var i in tempSongs) {
+// 		songs.push(tempSongs[songs1][i]);
+// 	}
+// }
+
 
 //***************************************************
 // Set of functions to execute XHR Requests
 // to load JSON files
 //***************************************************
-function executeThisCodeAfterFileLoaded(){
+function parseSongsJSON(){
+
+	// var tempSongsArray = [];
+
 	// console.log("It worked!!!", this.responseText);
 	var data = JSON.parse(this.responseText);
-	console.log("It worked!!!", data);
-	writeToDOM(data);
+console.log("It worked!!! :: data :: ", data);
+	// let data = JSON.parse(this.responseText);
+	data = data.songs1;
+
+// console.log("data :: ", data);
+	data.forEach(each => each.id = getID());
+    data.forEach(each => songs.push(each));
+
+	writeToDOM(songs);
 }
 
-function executeThisCodeAfterFileFails(){
-	console.log("booooooo");
+
+function getID () {
+    var currID = idCounter;
+    idCounter++;
+    return currID;
+}
+
+
+function executeThisCodeIfFileFails(){
+	console.log("XHR Request fail ... ");
 }
 
 
@@ -116,12 +111,41 @@ function loadJSON (jsonFile) {
 
 	var myRequest = new XMLHttpRequest();
 
-	myRequest.addEventListener("load", executeThisCodeAfterFileLoaded);
-	myRequest.addEventListener("error", executeThisCodeAfterFileFails);
+	myRequest.addEventListener("load", parseSongsJSON);
+	myRequest.addEventListener("error", executeThisCodeIfFileFails);
 	myRequest.open("GET", jsonFile);
 	myRequest.send();
 }
 
-loadJSON("songs1.JSON");
+// loadJSON("songs1.JSON");
+
+function loadNextJSONFile () { 
+
+    if (JSONList.length > JSONsLoaded) { 
+        loadThisFile = JSONsLoaded;
+        JSONsLoaded++;
+        return JSONList[loadThisFile];
+
+    } else {
+        return null;
+    }
+}
+
+// lists the set of JSON files that have been defined
+const JSONList = ["songs1.json", "songs2.json"];
+var loadThisFile;
+var JSONsLoaded = 0;
+
+loadJSON(loadNextJSONFile());
+
+
+//***************************************************
+// Event Handler for <More> button
+//***************************************************
+// var moreButton = document.getElementById("moreButton");
+
+// moreButton.addEventListener("click", function() {
+//     loadJSON ("songs2.JSON", 2);
+// });
 
 
