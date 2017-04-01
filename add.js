@@ -4,6 +4,14 @@ var addView = document.getElementById("addSongsContainer");
 var addSongsContainer = document.getElementById("addSongsContainer");
 var bluePanel = document.getElementById("bluePanel");
 
+
+//***************************************************
+// Event Listener clears the List Songs view 
+// (blue and yellow boxes) from the screen; 
+// calls <addNewSong> which displays a simple 
+// input form for user to input information for a new song; 
+// the song is then added to <songs> array
+//***************************************************
 addLink.addEventListener("click", function() {
   listView.classList.add("hidden");
 
