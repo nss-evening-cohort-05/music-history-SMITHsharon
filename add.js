@@ -70,6 +70,7 @@ function addNewSong () {
 	addButton.addEventListener("click", function() {
 	    // addThisSong(addSongsContainer.firstChild.childNodes[0]);
 	    addThisSong(addSongsContainer);
+	    addNewSong();
 	});
 }
 
