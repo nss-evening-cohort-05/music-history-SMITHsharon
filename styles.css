@@ -39,28 +39,6 @@ ul.navbar li a {
     font-size: 17px;
 }
 
-/*********************************/
-/* provided snippets */
-/*********************************/
-/*ul > li {
-  display: inline;
-  list-style-type: none;
-  margin: 5px 15px 0 15px;
-  background-color: goldenrod;
-  padding: 5px;
-}*/
-
-.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
-
-/*********************************/
-/* provided snippets */
-/*********************************/
 
 
 /*********************************************/
@@ -75,13 +53,6 @@ ul.navbar li a {
   	justify-content: space-between;
 }
 
-/*#list-view {
-display: inline-block;
-	margin 0 10%;
-	width: 23%;
-	background-color: #4DD7FA;
-	border: 2px solid black;
-}*/
 
 .blueBox {
 	display: inline-block;
@@ -91,18 +62,32 @@ display: inline-block;
 	border: 2px solid black;
 }
 
-/*#list-view {
-	width: 74%;
-	background-color: #FEFAC0;
-	border: 2px solid black;
-	overflow: auto;
-}*/
+
 
 .yellowBox {
 	width: 74%;
 	background-color: #FEFAC0;
 	border: 2px solid black;
 	overflow: auto;
+}
+
+
+#addSongsContainer {
+	margin-left: 25%;
+	width: 74%;
+	font-size: 1.2em;
+}
+
+
+input {
+	margin-top: 2%;
+}
+
+
+.addDiv {
+	margin-top: 5%;
+	margin-left: auto;
+	padding-left: 25%;
 }
 
 
@@ -139,16 +124,35 @@ ul.checkbox li {
 	float: left;
 }
 
-/* <Filter> button */
-#filter {
+
+
+/*********************************************/
+/* buttons */
+/*********************************************/
+#filter, #moreButton {
 	display: block;
 	margin-top: 20px;
+	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1% 25%;
 	font-size: 1.2em;
 	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 28px;
+}
+
+
+#moreButton, #addButton {
+	justify-content: center;
+	border-radius: 28px;
+	max-width: 100px;
+	margin: 5% auto;
+	padding: 10px 20px 10px 20px;
+}
+
+
+#moreButton:active, #moreButton:focus, #filter:active, #filter:focus, #addButton:active, #addButton:focus {
+	outline: none;
 }
 
 
@@ -166,6 +170,19 @@ ul.checkbox li {
 .songCredit {
 	margin-top: 6px;
 	margin-left: 20px;
+}
+
+
+
+/*********************************************/
+/* display or hide the <blue> and <yellow> content areas
+/*********************************************/
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 
