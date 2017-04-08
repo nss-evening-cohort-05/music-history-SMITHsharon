@@ -13,7 +13,7 @@
 
 
 // lists the set of JSON files that have been defined
-// const JSONList = ["songs1.json", "songs2.json"];
+const JSONList = ["songs1.json", "songs2.json"];
 	
 var songs = [];
 //***************************************************
@@ -31,13 +31,19 @@ var songs = [];
 		// doSomething();
 	});
 // }
-
+// var fileCounter = 0;
 function secondLoadJSON() {
-
+// console.log("jsonFile :: ", jsonFile);
+// if (fileCounter < JSONList.length) {
 	$.ajax({
 		url: "songs2.json"
+		// url: jsonFile
 	}).done(function(data){
+// console.log("done");
+		// var fileNameStr = jsonFile.substring(0, jsonFile.length-5);
+// console.log("fileNameStr :: ", fileNameStr);
 		buildSongsArray(data.songs2);
+		// fileCounter++; 
 	}).fail( function (error) {
 		console.log("whoops! some kind of error happening here ...");
 	}).always( function (){
@@ -68,9 +74,11 @@ function writeToDOM(songsArray) {
 	$("#songsListContainer").html("");
 	$.each (songsArray, function (index,value) {
 		index += 1;
-		$("#songsListContainer").append(`<h1 id=${index} class="songTitle">${value.name}</h1>`);
+		// $("#songsListContainer").append(`<h1 id=${index-1} class="songTitle">${value.name}</h1>`);
+		$("#songsListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
 		$("#songsListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
-		$("#songsListContainer").append(`<button type="button" id="deleteButton" value="delete">Delete</button></p>`);
+		$("#songsListContainer").append(`<button type="button" class="deleteButton" id=${index-1} value="delete">Delete</button></p>`);
+		// $("#songsListContainer").append(`<button type="button" id="deleteButton" value="delete">Delete</button></p>`);
 	});
 	$("#songsListContainer").append(`<div><button type="button" id="moreButton" value="more">More</button></div>`);
 
@@ -79,9 +87,10 @@ function writeToDOM(songsArray) {
 		secondLoadJSON();
 	});
 
-	$("button#deleteButton").on("click", function(){
-
-		songs.splice(($(this).attr('id'))-1, 1);
+	$("button.deleteButton").on("click", function(){
+var arrayIndex = $(this).attr('id');
+console.log("arrayIndex :: ", arrayIndex);
+		songs.splice(arrayIndex, 1);
 
 		// var delIndex = $(this).attr("id");
 		// var delIndex = this.id;
@@ -100,10 +109,19 @@ function writeToDOM(songsArray) {
 // then write the <songs> array to the DOM
 //***************************************************
 function buildSongsArray(data) {
+// console.log("data / fileName :: ", data, fileName);
+// var obj = { first: 'someVal' };
+// data[Object.keys(data)[0]]; 
+
+// console.log("data :: ", data);
+// data = data.fileName;
+// console.log("data :: ", data);
+	// var fileNameStr = data.substring(0, data.length-5);
+	// data.forEach(each => each.id = getID());
+ 	//data.forEach(each => songs.push(each));
 
 	data.forEach(each => each.id = getID());
     data.forEach(each => songs.push(each));
-
     // write the <songs> array to the DOM
 	writeToDOM(songs);
 }
