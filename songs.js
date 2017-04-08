@@ -43,11 +43,12 @@ var idCounter = 0;
 // 	    }
 // 	});
 // }
+var songs = [];
 
 $.ajax({
 	url: "songs1.json"
 }).done(function(data){
-	writeToDOM(data.songs1)
+	buildSongsArray(data.songs1);
 }).fail( function (error) {
 	console.log("whoops! some kind of error happening here ...");
 }).always( function (){
@@ -80,10 +81,11 @@ $.ajax({
 // });
 // $("#songListContainer").append(`<div><button type="more" id="moreButton" value="More">More</button></div>`);
 	// writeToDOM(songs);
+// var songData = {}
 
-function writeToDOM(data) {
-console.log("writingToDom / data :: ", data);
-$.each (data, function (index,value) {
+function writeToDOM(songsArray) {
+console.log("writingToDom / data :: ", songsArray);
+$.each (songsArray, function (index,value) {
 	index += 1;
 	$("#songListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
 	$("#songListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
@@ -93,11 +95,51 @@ $("#songListContainer").append(`<div><button type="more" id="moreButton" value="
 	// writeToDOM(songs);
 }
 
-// function getID () {
-//     var currID = idCounter;
-//     idCounter++;
-//     return currID;
+
+function buildSongsArray(data) {
+
+	data.forEach(each => each.id = getID());
+    data.forEach(each => songs.push(each));
+
+    // write the <songs> array to the DOM
+	writeToDOM(songs);
+console.log("songs :: ", songs);
+}
+
+function getID () {
+    var currID = idCounter;
+    idCounter++;
+    return currID;
+}
+
+// 	var sTitle;
+// 	var sArtist;
+// 	var sAlbum;
+// 	var sGenre;
+// console.log("buildingSongsArray / data :: ", data);
+// $.each (data, function (index,value) {
+// 	index += 1;
+	// sTitle = ${value.name};
+// 	sTitle = $(name).val();
+// console.log("sTitle :: ", sTitle);
+// 	sArtist = $(artist).val();
+// 	sAlbum = $(album).val();
+// 	sGenre = $(genre).val();
+
+// 	songData.name = sTitle;
+// 	songData.artist = sArtist;
+// 	songData.album = sAlbum;
+// 	songData.genre = sGenre;
+// 	songs.push(songData);
+// 	console.log("songs :: ", songs);
+	// $("#songListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
+	// $("#songListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
+	
+// });
 // }
+
+
+
 
 
 
