@@ -23,58 +23,53 @@ $("#link-add").click(function (){
 // function adds the Song entered by user on input screen
 // to <songs> array
 //***************************************************
-function addThisSong (thisSong) {
+// function addThisSong (thisSong) {
 // .serializeArray()
-console.log("addingThisSong");
-	var arrayLength = songs.length;
+// console.log("addingThisSong");
+// 	var arrayLength = songs.length;
 
-	songs.push ({
-		id: arrayLength,
-		name: thisSong.firstChild.childNodes[0].value,
-		artist: thisSong.firstChild.childNodes[2].value,
-		album: thisSong.firstChild.childNodes[4].value,
-		genre: thisSong.firstChild.childNodes[6].value
-	});
-}
+// 	songs.push ({
+// 		id: arrayLength,
+// 		name: thisSong.firstChild.childNodes[0].value,
+// 		artist: thisSong.firstChild.childNodes[2].value,
+// 		album: thisSong.firstChild.childNodes[4].value,
+// 		genre: thisSong.firstChild.childNodes[6].value
+// 	});
+// }
 
-//WYSIWYG
-// $.each (famePeople, function (index,value) {
-//   console.log(value);
-//     index += 1;
-//     $("#peopleContainer").append(`<div class="eachPerson">`);
-//     // $(".personContainer:nth-of-type(" + index + ")").append(`<person class="eachPerson">`);
-//     $(".eachPerson:nth-of-type(" + index + ")").append(`<header><h2>${value.title} ${value.name}<h2></header>`);
-//     $(".eachPerson:nth-of-type(" + index + ")").append(`<section><span>${value.bio}</span><br><img src=${value.image} class="thisImage"></section>`);
-//     $(".eachPerson:nth-of-type(" + index + ")").append(`<footer><h3>Born: ${value.lifespan.birth}<br>Died: ${value.lifespan.death}</h3></footer>`);
-// });
 
 //***************************************************
 // function dislays an input form for user to 
 // input information about a song to add to <songs> array
 //***************************************************
 function addNewSong () {
- 
-  	// var formString = "";
-  	
-	formString += `<div id="inputForm">`;
-	formString += `<input type="text" name="name" size="60" placeholder="Song Name"><br>`;
-	formString += `<input type="text" name="artist" size="60" placeholder="Artist"><br>`;
-	formString += `<input type="text" name="album" size="60" placeholder="Album"><br>`;
-	formString += `<input type="text" name="genre" class="inputField" placeholder="Genre"><br>`;
-	
-	formString += `<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>`;
+ console.log("addingNewSong");
+  	$("#form").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
+  	$("#form").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
+  	$("#form").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
+  	$("#form").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
 
-	addSongsContainer.innerHTML = formString;
+  	$("#form").append('<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>');
+
+
+  	// $("#mainContent").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
+  	// $("#mainContent").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
+  	// $("#mainContent").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
+  	// $("#mainContent").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
+
+  	// $("#mainContent").append('<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>');
+
 
 	//***************************************************
-	// Event Handler for <More> button
+	// Event Handler for <Add> button
 	//***************************************************
-	var addButton = document.getElementById("addButton");
-
-	addButton.addEventListener("click", function() {
-	    // addThisSong(addSongsContainer.firstChild.childNodes[0]);
-	    addThisSong(addSongsContainer);
-	    addNewSong();
+	$("#inputForm").submit(function() {
+	  	var values = $(this).serialize();
+	  	console.log("values :: ", values);
+	  	event.preventDefault();
 	});
+
+
+	    // addNewSong();
 }
 

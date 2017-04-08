@@ -44,7 +44,7 @@ ul.navbar li a {
 /*********************************************/
 /* STYLING FOR MAIN CONTENT :: Box Containers
 /*********************************************/
-.mainContent {
+#mainContent {
 	max-width: 80%;
 	margin: 2% 10%;
 	display: flex;
@@ -80,6 +80,8 @@ ul.navbar li a {
 
 
 input {
+	display: block;
+	max-width: 60%;
 	margin-top: 2%;
 }
 

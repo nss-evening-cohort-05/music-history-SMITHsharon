@@ -1,4 +1,13 @@
 
+// questions
+// how to generalize loading multiple JSON files
+// jquery array methods
+// why is jQuery better for writing to the DOM than JavaScript? 
+//   Does not seem to sve that many lines of code?
+// the Form is a mess : / 
+//   How to generate a form using jQuery? 
+
+
 // lists the set of JSON files that have been defined
 // const JSONList = ["songs1.json", "songs2.json"];
 	
@@ -61,6 +70,7 @@ function writeToDOM(songsArray) {
 	$("#songsListContainer").append(`<div><button type="more" id="moreButton" value="More">More</button></div>`);
 
 	$("button#moreButton").on("click", function(){
+		// load the second JSON file
 		secondLoadJSON();
 	});
 
