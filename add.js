@@ -30,7 +30,7 @@ addLink.addEventListener("click", function() {
 // to <songs> array
 //***************************************************
 function addThisSong (thisSong) {
-
+// .serializeArray()
 	var arrayLength = songs.length;
 
 	songs.push ({
@@ -42,7 +42,16 @@ function addThisSong (thisSong) {
 	});
 }
 
-
+//WYSIWYG
+// $.each (famePeople, function (index,value) {
+//   console.log(value);
+//     index += 1;
+//     $("#peopleContainer").append(`<div class="eachPerson">`);
+//     // $(".personContainer:nth-of-type(" + index + ")").append(`<person class="eachPerson">`);
+//     $(".eachPerson:nth-of-type(" + index + ")").append(`<header><h2>${value.title} ${value.name}<h2></header>`);
+//     $(".eachPerson:nth-of-type(" + index + ")").append(`<section><span>${value.bio}</span><br><img src=${value.image} class="thisImage"></section>`);
+//     $(".eachPerson:nth-of-type(" + index + ")").append(`<footer><h3>Born: ${value.lifespan.birth}<br>Died: ${value.lifespan.death}</h3></footer>`);
+// });
 
 //***************************************************
 // function dislays an input form for user to 
@@ -50,8 +59,8 @@ function addThisSong (thisSong) {
 //***************************************************
 function addNewSong () {
  
-  	var formString = "";
-
+  	// var formString = "";
+  	
 	formString += `<div id="inputForm">`;
 	formString += `<input type="text" name="name" size="60" placeholder="Song Name"><br>`;
 	formString += `<input type="text" name="artist" size="60" placeholder="Artist"><br>`;
