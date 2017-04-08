@@ -1,10 +1,4 @@
 
-var addLink = document.getElementById("link-add");
-var addView = document.getElementById("addSongsContainer");
-var addSongsContainer = document.getElementById("addSongsContainer");
-var bluePanel = document.getElementById("bluePanel");
-
-
 //***************************************************
 // Event Listener clears the List Songs view 
 // (blue and yellow boxes) from the screen; 
@@ -12,13 +6,13 @@ var bluePanel = document.getElementById("bluePanel");
 // input form for user to input information for a new song; 
 // the song is then added to <songs> array
 //***************************************************
-addLink.addEventListener("click", function() {
-  listView.classList.add("hidden");
+$("#link-add").click(function (){
 
-  bluePanel.classList.add("hidden");
+  $("#songsListContainer").addClass("hidden");
+  $("#bluePanel").addClass("hidden");
 
-  addView.classList.add("visible");
-  addView.classList.remove("hidden");
+  $("#addSongsContainer").addClass("visible");
+  $("#addSongsContainer").removeClass("hidden");
 
   addNewSong();
 })
@@ -31,6 +25,7 @@ addLink.addEventListener("click", function() {
 //***************************************************
 function addThisSong (thisSong) {
 // .serializeArray()
+console.log("addingThisSong");
 	var arrayLength = songs.length;
 
 	songs.push ({

@@ -1,13 +1,6 @@
 
 // lists the set of JSON files that have been defined
-const JSONList = ["songs1.json", "songs2.json"];
-var JSONsLoaded = 0;
-var loadThisFile;
-var allLoaded = false;
-
-var idCounter = 0;
-
-
+// const JSONList = ["songs1.json", "songs2.json"];
 	
 var songs = [];
 //***************************************************
@@ -59,13 +52,13 @@ function secondLoadJSON() {
 // write contents of <songs> array to the DOM
 //***************************************************
 function writeToDOM(songsArray) {
-	$("#songListContainer").html("");
+	$("#songsListContainer").html("");
 	$.each (songsArray, function (index,value) {
 		index += 1;
-		$("#songListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
-		$("#songListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
+		$("#songsListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
+		$("#songsListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
 	});
-	$("#songListContainer").append(`<div><button type="more" id="moreButton" value="More">More</button></div>`);
+	$("#songsListContainer").append(`<div><button type="more" id="moreButton" value="More">More</button></div>`);
 
 	$("button#moreButton").on("click", function(){
 		secondLoadJSON();
@@ -86,6 +79,7 @@ function buildSongsArray(data) {
 	writeToDOM(songs);
 }
 
+var idCounter = 0;
 function getID () {
     var currID = idCounter;
     idCounter++;

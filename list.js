@@ -1,23 +1,17 @@
 
-var listLink = document.getElementById("link-list");
-var listView = document.getElementById("songListContainer");
-var bluePanelContainer = document.getElementById("bluePanel");
-var bluePanel = document.getElementById("bluePanel");
-
-
 //***************************************************
 // Event Listener on <List> navbar link restores
 // the List Songs view (blue and yellow boxes)
 //***************************************************
-listLink.addEventListener("click", function(event) {
-  event.preventDefault();
-  addView.classList.add("hidden");
+$("#link-list").click(function (){
 
-  bluePanel.classList.remove("hidden");
-  bluePanel.classList.add("visible");
+  $("#addSongsContainer").addClass("hidden");
 
-  listView.classList.add("visible");
-  listView.classList.remove("hidden");
+  $("#bluePanel").removeClass("hidden");
+  $("#bluePanel").addClass("visible");
+
+  $("#songsListContainer").addClass("visible");
+  $("#songsListContainer").removeClass("hidden");
 
   writeToDOM(songs);
 });
