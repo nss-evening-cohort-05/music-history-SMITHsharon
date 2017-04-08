@@ -44,32 +44,35 @@ $("#link-add").click(function (){
 //***************************************************
 function addNewSong () {
  console.log("addingNewSong");
-  	$("#form").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
-  	$("#form").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
-  	$("#form").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
-  	$("#form").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
+  	// $("#inputForm").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
+  	// $("#inputForm").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
+  	// $("#inputForm").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
+  	// $("#inputForm").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
 
-  	$("#form").append('<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>');
+  	// $("#inputForm").append('<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>');
 
 
-  	// $("#mainContent").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
-  	// $("#mainContent").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
-  	// $("#mainContent").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
-  	// $("#mainContent").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
+  	$("#mainContent").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
+  	$("#mainContent").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
+  	$("#mainContent").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
+  	$("#mainContent").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
 
-  	// $("#mainContent").append('<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>');
+  	$("#mainContent").append('<div class="addDiv"><button type="submit" id="addButton" value="Add">Add</button></div></div>');
 
 
 	//***************************************************
 	// Event Handler for <Add> button
 	//***************************************************
-	$("#inputForm").submit(function() {
-	  	var values = $(this).serialize();
+	// $("#mainContent").submit(function() {
+	$("#addButton").on("click", function(){
+		console.log("clicked Add button");
+	  	var values = $(this).serializeArray();
 	  	console.log("values :: ", values);
-	  	event.preventDefault();
+	  	songs.push(values);
+	  	console.log("songs :: ", songs);
+	  	// event.preventDefault();
 	});
 
-
-	    // addNewSong();
+	writeToDOM(songs);
 }
 

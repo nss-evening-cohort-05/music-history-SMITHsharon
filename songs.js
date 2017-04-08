@@ -4,8 +4,12 @@
 // jquery array methods
 // why is jQuery better for writing to the DOM than JavaScript? 
 //   Does not seem to sve that many lines of code?
+// Why is the Delete button wrapping?
+// How to get the ID# of Delete item <=> tied to array index
 // the Form is a mess : / 
 //   How to generate a form using jQuery? 
+//   How to get the values from the form, write to the array? 
+//   Why is <List><writeToDOM> not listing the <songs> array?
 
 
 // lists the set of JSON files that have been defined
@@ -64,17 +68,32 @@ function writeToDOM(songsArray) {
 	$("#songsListContainer").html("");
 	$.each (songsArray, function (index,value) {
 		index += 1;
-		$("#songsListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
+		$("#songsListContainer").append(`<h1 id=${index} class="songTitle">${value.name}</h1>`);
 		$("#songsListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
+		$("#songsListContainer").append(`<button type="button" id="deleteButton" value="delete">Delete</button></p>`);
 	});
-	$("#songsListContainer").append(`<div><button type="more" id="moreButton" value="More">More</button></div>`);
+	$("#songsListContainer").append(`<div><button type="button" id="moreButton" value="more">More</button></div>`);
 
 	$("button#moreButton").on("click", function(){
 		// load the second JSON file
 		secondLoadJSON();
 	});
 
+	$("button#deleteButton").on("click", function(){
+
+		songs.splice(($(this).attr('id'))-1, 1);
+
+		// var delIndex = $(this).attr("id");
+		// var delIndex = this.id;
+		// console.log("delIndex :: ", delIndex);
+		// delIndex--; // array index is off by one
+		// songs.splice(delIndex, 1);
+		// songs.splice(this.id-1, 1);
+		writeToDOM(songs);
+	});
+
 }
+
 
 //***************************************************
 // push songs from <json> file to <songs> array
