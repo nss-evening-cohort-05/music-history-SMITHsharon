@@ -1,19 +1,6 @@
 
-// questions
-// in AJAX requests ... console.log's ???
-// jquery array methods
-// why is jQuery better for writing to the DOM than JavaScript? 
-//   Does not seem to sve that many lines of code?
-// Why is the Delete button wrapping?
-//   How to generate a form using jQuery? 
-//   How to get the values from the form, write to the array? 
-//   Why is <List><writeToDOM> not listing the <songs> array?
+var songs = []; // array will hold the songs data loaded in from JSON files
 
-
-// lists the set of JSON files that have been defined
-// const JSONList = ["songs1.json", "songs2.json"];
-	
-var songs = [];
 //***************************************************
 // execute XHR request on first JSON file
 //***************************************************

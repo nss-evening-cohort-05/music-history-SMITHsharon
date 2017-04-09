@@ -153,12 +153,13 @@ ul.checkbox li {
 }
 
 
-#deleteButton {
-    display: inline;
+.deleteButton {
+	display: inline;
+    margin-left: 50px;
 }
 
 #moreButton:active, #moreButton:focus, #filter:active, #filter:focus, #addButton:active, #addButton:focus, 
-#deleteButton:active, #deleteButton:focus {
+.deleteButton:active, .deleteButton:focus {
 	outline: none;
 }
 
@@ -167,7 +168,7 @@ ul.checkbox li {
 /*********************************************/
 /* STYLING FOR YELLOW BOX
 /*********************************************/
-.songCredit {
+p.songCredit {
 	max-width: 80%;
 	margin-right: 15%;
 	padding-right: 15%;

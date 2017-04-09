@@ -1,4 +1,9 @@
 
+var songName;
+var artistName;
+var albumName;
+var genreName;
+
 //***************************************************
 // Event Listener clears the <listSongs> view 
 // (blue and yellow boxes) from the screen; 
@@ -18,24 +23,28 @@ $("#link-add").click(function (){
 })
 
 
-
 //***************************************************
 // function adds the Song entered by user on input screen
 // to <songs> array
 //***************************************************
-// function addThisSong (thisSong) {
-// .serializeArray()
-// console.log("addingThisSong");
-// 	var arrayLength = songs.length;
+function addThisSong (thisSong) {
 
-// 	songs.push ({
-// 		id: arrayLength,
-// 		name: thisSong.firstChild.childNodes[0].value,
-// 		artist: thisSong.firstChild.childNodes[2].value,
-// 		album: thisSong.firstChild.childNodes[4].value,
-// 		genre: thisSong.firstChild.childNodes[6].value
-// 	});
-// }
+  var arrayLength = songs.length;
+
+  //Get
+  songName = $("#name").val();
+  artistName = $("#artist").val();
+  albumName = $("#album").val();
+  genreName = $("#genre").val();
+
+  songs.push ({
+    id: arrayLength,
+    name: songName,
+    artist: artistName,
+    album: albumName,
+    genre: genreName
+  });
+}
 
 
 //***************************************************
@@ -43,36 +52,30 @@ $("#link-add").click(function (){
 // input information about a song to add to <songs> array
 //***************************************************
 function addNewSong () {
- console.log("addingNewSong");
-  	// $("#inputForm").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
-  	// $("#inputForm").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
-  	// $("#inputForm").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
-  	// $("#inputForm").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
+ 
+    var formString = "";
 
-  	// $("#inputForm").append('<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>');
+  formString += `<div id="inputForm">`;
+  formString += `<input type="text" id="name" size="60" placeholder="Song Name"><br>`;
+  formString += `<input type="text" id="artist" size="60" placeholder="Artist"><br>`;
+  formString += `<input type="text" id="album" size="60" placeholder="Album"><br>`;
+  formString += `<input type="text" id="genre" class="inputField" placeholder="Genre"><br>`;
+  
+  formString += `<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>`;
 
-
-  	$("#mainContent").append(`<div id='inputForm'><input type="text" name="name" size="60" placeholder="Song Name"><br>`);
-  	$("#mainContent").append(`<input type="text" name="artist" size="60" placeholder="Artist"><br>`);
-  	$("#mainContent").append(`<input type="text" name="album" size="60" placeholder="Album"><br>`);
-  	$("#mainContent").append(`<input type="text" name="genre" class="inputField" placeholder="Genre"><br></div>`);
-
-  	$("#mainContent").append('<div class="addDiv"><button type="submit" id="addButton" value="Add">Add</button></div></div>');
-
-
-	//***************************************************
-	// Event Handler for <Add> button
-	//***************************************************
-	// $("#mainContent").submit(function() {
-	$("#addButton").on("click", function(){
-		console.log("clicked Add button");
-	  	var values = $(this).serializeArray();
-	  	console.log("values :: ", values);
-	  	songs.push(values);
-	  	console.log("songs :: ", songs);
-	  	// event.preventDefault();
-	});
-
-	writeToDOM(songs);
+  addSongsContainer.innerHTML = formString;
 }
+
+
+//***************************************************
+// event listener for <Add> button
+// adds the Song entered by user on input screen
+// to <songs> array / redisplays the addNewSong form
+//***************************************************
+$('body').on("click", "#addButton", function(){
+    
+    addThisSong(addSongsContainer);
+    
+    addNewSong(); // display a clean input form
+});
 
