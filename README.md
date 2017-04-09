@@ -1,11 +1,18 @@
 # NSS Music History
 
 ### Project Description 
-This assignment is ongoing, with this iteration a combination of Music History Parts 3 and 4. 
+This assignment is ongoing, with each iteration layering in new skills and functionality into the project, either on top of or replacing entirely the code that has come before. 
 
+#### Music History 5 
+Reworked the application that was developed for MH4, layering in jQuery code. 
+
+#### Music History 3 and 4 
 Part 3 layered in the functionality for the user to be able to add new songs to the collection. When the user clicks the `Add` link to add a new song, the application hides the blue and yellow box panels, and a simple input screen displays in which the new song information can be entered. 
 
 Part 4 stored the Songs data in two separate `JSON` files, one of which is loaded on launch, and the other is loaded when the user clicks the `More` button. 
+
+#### Music History 1 and 2 
+Parts 1 and 2 created the look and underlying structure of the components. 
 
 
 #### Music History on Launch
@@ -21,6 +28,10 @@ Part 4 stored the Songs data in two separate `JSON` files, one of which is loade
 
 
 ### Project Specs
+#### Music History 5 Specs
+Implemented `jQuery` in the Music History code for every `innerHTML`, `getElementById`, `getElementByClassName`, event listener and XHR request.
+
+#### Music History 4 Specs
 - When the application first launches, an XHR request is executed to load `songs1.json`.
 - If the user clicks the `Add` navbar link, the blue and yellow box panels are hidden from view, and a simple input screen displays in which a new song can be entered. New Song information is added to the `songs` object array. The `Add` feature has minimal functionality; no validation. 
 - If the user clicks the `List` navbar link, the blue and yellow box panels display. The current contents of the `songs` object array list in the yellow panel. 
@@ -31,7 +42,8 @@ Part 4 stored the Songs data in two separate `JSON` files, one of which is loade
 - `html`
 - `css`
 - `JavaScript`
-- `XHR` and `JSON` requests
+- `XHR` and `JSON` requests (Music History 4)
+- `jQuery` (Music History 5)
 
 
 ### How To View The Screen 
