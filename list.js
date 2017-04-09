@@ -1,7 +1,7 @@
 
 //***************************************************
 // Event Listener on <List> navbar link restores
-// the List Songs view (blue and yellow boxes)
+// the <listSongs> view (blue and yellow boxes)
 //***************************************************
 $("#link-list").click(function (){
 
@@ -14,5 +14,6 @@ $("#link-list").click(function (){
   $("#songsListContainer").removeClass("hidden");
 
   writeToDOM(songs);
+  console.log("songs", songs);
 });
 

@@ -1,6 +1,6 @@
 
 //***************************************************
-// Event Listener clears the List Songs view 
+// Event Listener clears the <listSongs> view 
 // (blue and yellow boxes) from the screen; 
 // calls <addNewSong> which displays a simple 
 // input form for user to input information for a new song; 
