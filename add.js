@@ -1,28 +1,26 @@
 
-var addLink = document.getElementById("link-add");
-var addView = document.getElementById("addSongsContainer");
-var addSongsContainer = document.getElementById("addSongsContainer");
-var bluePanel = document.getElementById("bluePanel");
-
+var songName;
+var artistName;
+var albumName;
+var genreName;
 
 //***************************************************
-// Event Listener clears the List Songs view 
+// Event Listener clears the <listSongs> view 
 // (blue and yellow boxes) from the screen; 
 // calls <addNewSong> which displays a simple 
 // input form for user to input information for a new song; 
 // the song is then added to <songs> array
 //***************************************************
-addLink.addEventListener("click", function() {
-  listView.classList.add("hidden");
+$("#link-add").click(function (){
 
-  bluePanel.classList.add("hidden");
+  $("#songsListContainer").addClass("hidden");
+  $("#bluePanel").addClass("hidden");
 
-  addView.classList.add("visible");
-  addView.classList.remove("hidden");
+  $("#addSongsContainer").addClass("visible");
+  $("#addSongsContainer").removeClass("hidden");
 
   addNewSong();
 })
-
 
 
 //***************************************************
@@ -31,17 +29,22 @@ addLink.addEventListener("click", function() {
 //***************************************************
 function addThisSong (thisSong) {
 
-	var arrayLength = songs.length;
+  var arrayLength = songs.length;
 
-	songs.push ({
-		id: arrayLength,
-		name: thisSong.firstChild.childNodes[0].value,
-		artist: thisSong.firstChild.childNodes[2].value,
-		album: thisSong.firstChild.childNodes[4].value,
-		genre: thisSong.firstChild.childNodes[6].value
-	});
+  //Get
+  songName = $("#name").val();
+  artistName = $("#artist").val();
+  albumName = $("#album").val();
+  genreName = $("#genre").val();
+
+  songs.push ({
+    id: arrayLength,
+    name: songName,
+    artist: artistName,
+    album: albumName,
+    genre: genreName
+  });
 }
-
 
 
 //***************************************************
@@ -50,27 +53,29 @@ function addThisSong (thisSong) {
 //***************************************************
 function addNewSong () {
  
-  	var formString = "";
+    var formString = "";
 
-	formString += `<div id="inputForm">`;
-	formString += `<input type="text" name="name" size="60" placeholder="Song Name"><br>`;
-	formString += `<input type="text" name="artist" size="60" placeholder="Artist"><br>`;
-	formString += `<input type="text" name="album" size="60" placeholder="Album"><br>`;
-	formString += `<input type="text" name="genre" class="inputField" placeholder="Genre"><br>`;
-	
-	formString += `<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>`;
+  formString += `<div id="inputForm">`;
+  formString += `<input type="text" id="name" size="60" placeholder="Song Name"><br>`;
+  formString += `<input type="text" id="artist" size="60" placeholder="Artist"><br>`;
+  formString += `<input type="text" id="album" size="60" placeholder="Album"><br>`;
+  formString += `<input type="text" id="genre" class="inputField" placeholder="Genre"><br>`;
+  
+  formString += `<div class="addDiv"><button type="add" id="addButton" value="Add">Add</button></div></div>`;
 
-	addSongsContainer.innerHTML = formString;
-
-	//***************************************************
-	// Event Handler for <More> button
-	//***************************************************
-	var addButton = document.getElementById("addButton");
-
-	addButton.addEventListener("click", function() {
-	    // addThisSong(addSongsContainer.firstChild.childNodes[0]);
-	    addThisSong(addSongsContainer);
-	    addNewSong();
-	});
+  addSongsContainer.innerHTML = formString;
 }
+
+
+//***************************************************
+// event listener for <Add> button
+// adds the Song entered by user on input screen
+// to <songs> array / redisplays the addNewSong form
+//***************************************************
+$('body').on("click", "#addButton", function(){
+    
+    addThisSong(addSongsContainer);
+    
+    addNewSong(); // display a clean input form
+});
 

@@ -1,111 +1,82 @@
 
-// lists the set of JSON files that have been defined
-const JSONList = ["songs1.json", "songs2.json"];
-var JSONsLoaded = 0;
-var loadThisFile;
-var allLoaded = false;
+var songs = []; // array will hold the songs data loaded in from JSON files
 
-var songListContainer = document.getElementById("songListContainer");
-var songs = [];
-var idCounter = 0;
+//***************************************************
+// execute XHR request on first JSON file
+//***************************************************
+$.ajax({
+	url: "songs1.json"
+}).done(function(data){
+	buildSongsArray(data.songs1);
+}).fail( function (error) {
+	console.log("whoops! some kind of error happening here ...");
+});
 
 
 //***************************************************
-// Function writes contents of <songs> array to the DOM
-// Establishes Event Listener for the <More> button
-// that is dynamically written
+// execute XHR request on second JSON file
 //***************************************************
-function writeToDOM (songsData) {
-
-	var songString = "";
-	var currentSong;
-
-	songString = "";
-	for (var i=0; i<songsData.length; i++) {
-		currentSong = songsData[i];
-
-		songString += `<h1 class="songTitle">${currentSong.name}</h1>`;
-		songString += `<p class="songCredit">${currentSong.artist} | ${currentSong.album} | `;
-		songString += `${currentSong.genre }`;
-	}
-	songString += `<div><button type="more" id="moreButton" value="More">More</button></div>`;
-
-	songListContainer.innerHTML = songString;
-
-	//***************************************************
-	// Event Handler for <More> button
-	//***************************************************
-	var moreButton = document.getElementById("moreButton");
-
-	moreButton.addEventListener("click", function() {
-	    if (!allLoaded) { 
-	    	loadJSON(loadNextJSONFile());
-	    } else {
-	    	alert("All songs have been loaded");
-	    }
+function secondLoadJSON() {
+	$.ajax({
+		url: "songs2.json"
+	}).done(function(data){
+		buildSongsArray(data.songs2);
+	}).fail( function (error) {
+		console.log("whoops! some kind of error happening here ...");
 	});
 }
 
 
-
 //***************************************************
-// Set of functions to execute XHR Requests
-// to load JSON files
+// write contents of <songs> array to the DOM
+// and create event listeners for <More> and <Delete> buttons
 //***************************************************
-function parseSongsJSON(){
-
-	var data = JSON.parse(this.responseText);
-
-	var arrayIdentifier = "songs" + JSONsLoaded;
-	data = data[arrayIdentifier];
-
-	data.forEach(each => each.id = getID());
-    data.forEach(each => songs.push(each));
-
-	writeToDOM(songs);
+function writeToDOM(songsArray) {
+	$("#songsListContainer").html("");
+	$.each (songsArray, function (index,value) {
+		index += 1;
+		$("#songsListContainer").append(`<h1 class="songTitle">${value.name}</h1>`);
+		$("#songsListContainer").append(`<p class="songCredit">${value.artist} | ${value.album} | ${value.genre }`);
+		$("#songsListContainer").append(`<button type="button" class="deleteButton" id=${index-1} value="delete">Delete</button></p>`);
+	});
+	$("#songsListContainer").append(`<div><button type="button" id="moreButton" value="more">More</button></div>`);
 }
 
 
+//***************************************************
+// event listener for <More> button
+//***************************************************
+$('body').on("click", "#moreButton", function(){
+		// load the second JSON file
+		secondLoadJSON();
+});
+
+
+//***************************************************
+// event listener for <Delete> button
+//***************************************************
+$('body').on("click", "button.deleteButton", function(){
+	var arrayIndex = $(this).attr('id');
+	songs.splice(arrayIndex, 1);
+	writeToDOM(songs);
+});
+
+
+//***************************************************
+// push songs from <json> file to <songs> array
+// then write the <songs> array to the DOM
+//***************************************************
+function buildSongsArray(data) {
+	data.forEach(each => each.id = getID());
+    data.forEach(each => songs.push(each));
+    // write the <songs> array to the DOM
+	writeToDOM(songs);
+}
+
+var idCounter = 0;
 function getID () {
     var currID = idCounter;
     idCounter++;
     return currID;
 }
-
-
-function executeThisCodeIfFileFails(){
-	console.log("XHR Request fail ... ");
-}
-
-
-function loadJSON (jsonFile) {
-
-	var myRequest = new XMLHttpRequest();
-
-	myRequest.addEventListener("load", parseSongsJSON);
-	myRequest.addEventListener("error", executeThisCodeIfFileFails);
-	myRequest.open("GET", jsonFile);
-	myRequest.send();
-}
-
-
-function loadNextJSONFile () { 
-
-    if (JSONList.length > JSONsLoaded) { 
-
-        loadThisFile = JSONsLoaded;
-        JSONsLoaded++;
-
-        if (JSONList.length === JSONsLoaded) {
-        	allLoaded = true;
-        }
-        return JSONList[loadThisFile];
-
-    } else {
-        return true; // all (2) files have been loaded;
-    }
-}
-
-loadJSON(loadNextJSONFile());
-
 

@@ -44,7 +44,7 @@ ul.navbar li a {
 /*********************************************/
 /* STYLING FOR MAIN CONTENT :: Box Containers
 /*********************************************/
-.mainContent {
+#mainContent {
 	max-width: 80%;
 	margin: 2% 10%;
 	display: flex;
@@ -80,6 +80,8 @@ ul.navbar li a {
 
 
 input {
+	display: block;
+	max-width: 60%;
 	margin-top: 2%;
 }
 
@@ -151,7 +153,13 @@ ul.checkbox li {
 }
 
 
-#moreButton:active, #moreButton:focus, #filter:active, #filter:focus, #addButton:active, #addButton:focus {
+.deleteButton {
+	display: inline;
+    margin-left: 50px;
+}
+
+#moreButton:active, #moreButton:focus, #filter:active, #filter:focus, #addButton:active, #addButton:focus, 
+.deleteButton:active, .deleteButton:focus {
 	outline: none;
 }
 
@@ -160,6 +168,11 @@ ul.checkbox li {
 /*********************************************/
 /* STYLING FOR YELLOW BOX
 /*********************************************/
+p.songCredit {
+	max-width: 80%;
+	margin-right: 15%;
+	padding-right: 15%;
+}
 
 .songTitle {
 	margin-left: 20px;
