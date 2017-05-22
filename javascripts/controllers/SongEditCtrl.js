@@ -1,10 +1,10 @@
 app.controller("SongEditCtrl", function($location, $routeParams, $scope, SongFactory) {
 
-	$scope.newAddress = {};
+	$scope.newSong = {};
 
 	SongFactory.getSingleSong($routeParams.id)
 	.then((results) => {
-		$scope.newAddress = results.data;
+		$scope.newSong = results.data;
 	})
 	.catch((error) => {
 		console.log("error in getSingleSong", error);

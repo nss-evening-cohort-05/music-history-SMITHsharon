@@ -20,7 +20,7 @@
           <td>{{song.song}}</td>
           <td>{{song.genre}}</td>
           <td>
-          <button class="btn btn-xs fa fa fa-pencil pull-right" ng-click="editSong(song.id)"></button></td>
+          <a ng-href="#!/song/add"><button class="btn btn-xs fa fa fa-pencil pull-right" ng-click="editSong(song.id)"></button></a></td>
           <td>
           <button class="btn btn-xs fa fa-trash-o pull-right" ng-click="deleteSong(song.id)"></button></td>
         </tr>

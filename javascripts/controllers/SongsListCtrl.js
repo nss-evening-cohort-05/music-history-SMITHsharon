@@ -7,7 +7,6 @@ app.controller("SongsListCtrl", function($scope, SongFactory) {
 		SongFactory.getSongList()
 		.then((songz) => {
 			$scope.songs = songz;
-console.log("$scope.songs :: ", $scope.songs);
 		})
 		.catch((error) => {
 			console.log("error in getSongList", error);
@@ -20,7 +19,29 @@ console.log("$scope.songs :: ", $scope.songs);
 
 	$scope.editSong = (id) => {
 
-		console.log("in editSong from Pencil click");
+console.log("in editSong from Pencil click / id :: ", id);
+		// SongFactory.getSingleSong($routeParams.id)
+		// SongFactory.getSingleSong(id)
+	.then((results) => {
+		$scope.newSong = results.data;
+	})
+	.catch((error) => {
+		console.log("error in getSingleSong", error);
+	});
+	};
+
+
+
+
+	$scope.addNewSong = () => {
+
+		SongFactory.editSong($scope.newSong)
+		.then(() => {
+			$location.url('/songs/list');
+		})
+		.catch((error) => {
+			console.log("error in addNewSong for Edit Song", error);
+		});
 	};
 
 

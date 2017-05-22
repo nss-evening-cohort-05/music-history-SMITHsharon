@@ -20,7 +20,7 @@ app.config(function($routeProvider) {
       controller: 'SongViewCtrl'
     })
     .when('/song/edit/:id', {
-      templateUrl: 'partials/song-add.html',
+      templateUrl: 'partials/song-list.html',
       controller: 'SongEditCtrl'
     })
 	.otherwise('/songs/list'); //default view
