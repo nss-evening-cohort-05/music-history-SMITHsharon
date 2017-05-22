@@ -1,0 +1,26 @@
+<div class="songsList">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Artist</th>
+      <th>Album</th>
+      <th>Song</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="song in songs">
+      <th scope="row"></th>
+      <td>{{song.artist}}</td>
+      <td>{{song.album}}</td>
+      <td>{{song.song}}</td>
+      <td>{{song.genre}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- <div ng-repeat="item in items | filter:{isCompleted:false} | filter: searchText"> -->

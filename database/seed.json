@@ -1,0 +1,58 @@
+{
+	"songs": [
+		{
+			"song": "Break",
+			"artist": "Dave Perkins",
+			"album": "Pistol City Holiness",
+			"genre": "Blues"
+		},
+		{
+			"song": "The Worst Is Yet To Come",
+			"artist": "Keb' Mo'",
+			"album": "Bluesamericana",
+			"genre": "Contemporary Blues"
+		},
+		{
+			"song": "Salvation Army Band",
+			"artist": "Phil Keaggy",
+			"album": "Live From Kegworth Studio",
+			"genre": "Rock"
+		},
+		{
+			"song": "Moonlight",
+			"artist": "The Piano Guys",
+			"album": "The Piano Guys",
+			"genre": "Pop"
+		},
+		{
+			"song": "Hallelujah",
+			"artist": "Pentatonix",
+			"album": "Hallelujah",
+			"genre": "Pop"
+		},
+		{
+			"song": "* take your pick *",
+			"artist": "Yo-Yo Ma / Chris Thile / Edgar Meyer",
+			"album": "Bach Trios",
+			"genre": "Classical"
+		},
+		{
+			"song": "Dazed and Confused",
+			"artist": "Led Zeppelin",
+			"album": "Mothership",
+			"genre": "Rock"
+		},
+		{
+			"song": "I Can't Help You Now",
+			"artist": "Bonnie Raitt",
+			"album": "Silver Lining",
+			"genre": "Blues"
+		},
+		{
+			"song": "Georgia On My Mind",
+			"artist": "Ray Charles",
+			"album": "Genius The Ultimate Ray Charles Collection",
+			"genre": "Blues"
+		}
+	]		
+}

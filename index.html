@@ -2,20 +2,29 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Music History</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+	<meta charset="utf-8">
+	<title>Music History</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
 </head>
 
-<body>
-	<nav>
+<body ng-app="MusicApp">
+
+<!-- MUSIC HISTORY PART 10ish -->
+
+	<div ng-include="'partials/navbar.html'"></div>
+
+	<h1>Music History</h1>
+
+	<div ng-view></div>
+
+
+<!-- MUSIC HISTORY PART SIX and prior -->
+	<!-- <nav>
 		<ul class="navbar">
 
 			<li><a href="#" id="link-list">List</a></li>
@@ -26,7 +35,7 @@
 	<div id="mainContent">
 
 		<section id="bluePanel" class="blueBox">
-			<!-- slider -->
+			slider
 			<label class="boxHead">Song Length:</label>
 
             <input type="range" name="songLength" class="songLength">
@@ -85,17 +94,16 @@
 
 
 		<section class="hidden" id="addSongsContainer">
-			<!-- addSongs functionality written dynamically to the DOM </h1> -->
+			addSongs functionality written dynamically to the DOM 
 		</section>
 
 
 
 		<section id="songsListContainer" class="yellowBox">
-			<!-- songs written dynamically to the DOM </h1> -->
+			songs written dynamically to the DOM 
 		</section>
 
-	</div> 
-
+	</div>  -->
 
 	<!-- JQuery CDN -->
 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" 
@@ -108,24 +116,22 @@
 
 
 		<!-- 3rd party scripts -->
-  	<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
 	<script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="./lib/bower_components/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="./lib/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.js"></script>
 
 	<!-- personal scripts -->
-  <script type="text/javascript" src="./javascripts/app.js"></script>
-  <script type="text/javascript" src="./javascripts/AppConfig.js"></script>
-  <script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+	<script type="text/javascript" src="./javascripts/app.js"></script>
+	<script type="text/javascript" src="./javascripts/AppConfig.js"></script>
+	<script type="text/javascript" src="./javascripts/AppConstants.js"></script>
 
-  <script type="text/javascript" src="./javascripts/factories/ItemFactory.js"></script>
-  
-  <script type="text/javascript" src="./javascripts/controllers/ItemEditCtrl.js"></script>
-  <script type="text/javascript" src="./javascripts/controllers/ItemListCtrl.js"></script>
-  <script type="text/javascript" src="./javascripts/controllers/ItemNewCtrl.js"></script>
-  <script type="text/javascript" src="./javascripts/controllers/ItemViewCtrl.js"></script>
-  <script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/factories/SongFactory.js"></script>
+
+	<script type="text/javascript" src="./javascripts/controllers/SongsListCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/SongAddCtrl.js"></script>
+	<script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
 
 </body>
 </html>
