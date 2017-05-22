@@ -1,2 +1,8 @@
 body {
-  font: 100% "Arimo", sans-serif; }
+  background-color: #D8E2E6;
+  font: 100% "Arimo", sans-serif;
+  font-size: 1.5em; }
+
+.songsList {
+  margin-right: 5%;
+  margin-left: 5%; }

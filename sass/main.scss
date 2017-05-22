@@ -2,11 +2,17 @@
 @import "fonts";
 
 body {
-	// background-color: $yellow;
+	background-color: $background;
 	font: 100% $font-stack;
+	font-size: 1.5em;
 }
 
 
 .songsList {
-	
+	margin-right: 5%;
+	margin-left: 5%;
+
+	.songRow {
+		// marginp-top: 10px;
+	}
 }

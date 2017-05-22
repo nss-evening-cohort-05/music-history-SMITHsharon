@@ -1,4 +1,4 @@
-app.controller("SongViewCtrl", function($RouteParams, $scope, $SongFactory) => {
+app.controller("SongViewCtrl", function($RouteParams, $scope, $SongFactory) {
 
 	$scope.selectedSong = {};
 

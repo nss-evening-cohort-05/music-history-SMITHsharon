@@ -7,7 +7,9 @@ app.factory("SongFactory", function($http, $q, FIREBASE_CONFIG) {
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/songs.json`)
 			.then((fbSongs) => {
+console.log("fbSongs");
 				var songCollection = fbSongs.data;
+console.log("songCollection");
 				if (songCollection !== null) {
 					Object.keys(songCollection).forEach((key) => {
 						songCollection[key].id = key;
