@@ -15,16 +15,24 @@ Part 4 stored the Songs data in two separate `JSON` files, one of which is loade
 Parts 1 and 2 created the look and underlying structure of the components. 
 
 
-#### Music History on Launch
-![Music History on Launch](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/screens/screens/Music%20History%204%20on%20Launch.png)
+#### Music History 3 and 4 on Launch
+![Music History 3,4 on Launch](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/screens/screens/Music%20History%204%20on%20Launch.png)
 
 
-#### Music History, When User Clicks to Add a Song
-![Music History on Add](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/screens/screens/Music%20History%203%20on%20Add.png)
+#### Music History 3 and 4, When User Clicks to Add a Song
+![Music History 3,4 on Add](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/screens/screens/Music%20History%203%20on%20Add.png)
 
 
-#### Music History, After Second JSON File Has Loaded
-![Music History After Second Second JSON Load](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/screens/screens/Music%20History%204%20on%20Loading%20Second%20JSON.png)
+#### Music History 3 and 4, After Second JSON File Has Loaded
+![Music History 3,4 After Second Second JSON Load](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/screens/screens/Music%20History%204%20on%20Loading%20Second%20JSON.png)
+
+
+#### Music History 10, on Launch
+![Music History 10 on Launch]()
+
+
+#### Music History 10, on Edit Song
+![Music History 10 on Edit Song]()
 
 
 ### Project Specs
@@ -37,6 +45,17 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 - If the user clicks the `List` navbar link, the blue and yellow box panels display. The current contents of the `songs` object array list in the yellow panel. 
 - If the user clicks the `More` button, an XHR request is executed to load `songs2.json`. The songs in this `json` file are pushed to the end of the `songs` object array, and the revised array is written to the DOM. 
 
+#### Music History 10 Specs :: Reworked the App Using Angular
+- Completed all the project setup: jQuery, Bootstrap, SASS, Angular, Angular-Route, Grunt
+- Created a JSON file of song records (seed file) and imported the file into Firebase 
+- Injected `ngRoute` into the application
+- Controllers defined for the app: `NavCtrl`, `SongAddCtrl`, `SongEditCtrl`, `SongListCtrl`, `SongViewCtrl`
+- Added `SongFactory`
+- Created the partials: `navbar.html`, `songs-list.html`, `song-add.html`, `view-song.html`
+- The `SonglistCtrl` loads the JSON data from Firebase with an `XHR` call using the `$http` function that Angular provides.
+- The app puts the JSON object into `$scope.songs` and binds that variable to the controller.
+- Reworked the List, Add, Edit, and Delete functionality using Angular
+
 
 ### Technologies Used
 - `html`
@@ -44,6 +63,12 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 - `JavaScript`
 - `XHR` and `JSON` requests (Music History 4)
 - `jQuery` (Music History 5)
+Music History 10ish:
+- `SASS` 
+- `ES6`
+- `Bootstrap`
+- `Angular`
+- `Grunt`
 
 
 ### How To View The Screen 
@@ -51,6 +76,9 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 ```
 git clone https://github.com/nss-evening-cohort-05/music-history-SMITHsharon.git
 cd music-history-SMITHsharon
+cd lib
+bower install
+npm install
 npm install http-server -g
 http-server -p 8080
 ```

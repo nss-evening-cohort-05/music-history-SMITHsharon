@@ -1,0 +1,18 @@
+<div class="row">
+
+	<div class="songCard col-xs-3 col-xs-offset-3">
+
+		<div ng-cloak><h3 class="thisArtist">{{selectedSong.artist}}</h3></a></div>
+		<div class="thisAlbum">{{selectedSong.album}}</div>
+		<div class="thisSong">{{selectedSong.song}}</div>
+		<div class="thisGenre">{{selectedSong.genre}}</div>
+
+		<div class="buttonDiv">
+			<button class="btn btn-danger btn-sm fa fa-trash-o pull-right" ng-click="deleteAddress(address.id)"></button>
+
+			<button class="btn btn-xs pull-right"><a ng-href="#!/address/edit/{{address.id}}">Edit</a></button>
+        </div>
+
+	</div> <!-- .col -->
+	
+</div>

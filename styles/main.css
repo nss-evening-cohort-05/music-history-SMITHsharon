@@ -1,0 +1,16 @@
+body {
+  background-size: cover;
+  background-image: url("/images/background.jpeg");
+  font: 100% "Arimo", sans-serif;
+  color: #2F4F4F;
+  font-size: 1.5em; }
+
+h1 {
+  margin-left: 80px; }
+
+.songsList {
+  margin-right: 5%;
+  margin-left: 5%; }
+
+.buttonDiv button {
+  margin-right: 5px; }

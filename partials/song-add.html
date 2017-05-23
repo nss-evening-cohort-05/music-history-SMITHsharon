@@ -1,0 +1,18 @@
+
+<div class="row">
+	<div class="newSongForm col-xs-4 col-xs-offset-1">
+		<div class="new-song-form form-group">
+		  <label>New Song:</label>
+		  <input type="text" class="form-control" id="artist" size="15" placeholder="Artist" ng-model="newSong.artist">
+		  <input type="text" class="form-control" id="album" size="15" placeholder="Album" ng-model="newSong.album">  
+		  <input type="text" class="form-control" id="song" placeholder="Song" ng-model="newSong.song">
+		  <input type="text" class="form-control" id="genre" size="20" placeholder="genre" ng-model="newSong.genre">
+		</div>
+
+		  <div class="buttonDiv">
+			  <button type="button" class="btn btn-xs pull-right"><a ng-href="#!/songs/list">Cancel</a></button>
+
+			  <button type="button" class="btn btn-xs pull-right" ng-click="addNewSong()"><a ng-href="#!/song/add">Add</a></button>
+		  </div>
+	</div> <!-- .col -->
+</div>  <!-- .row -->

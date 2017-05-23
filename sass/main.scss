@@ -1,7 +1,35 @@
-@import: "colors";
-@import: "fonts";"
+@import "colors";
+@import "fonts";
 
 body {
-	background-color: $yellow;
+	// background-color: $background;
+	background-size: cover;
+	background-image: url("/images/background.jpeg");
 	font: 100% $font-stack;
+	color: $darkslategray;
+	font-size: 1.5em;
+}
+
+
+h1 {
+
+	margin-left: 80px;
+}
+
+
+.songsList {
+	margin-right: 5%;
+	margin-left: 5%;
+
+	.songRow {
+		// marginp-top: 10px;
+	}
+}
+
+
+.buttonDiv {
+
+	button {
+		margin-right: 5px;
+	}
 }
