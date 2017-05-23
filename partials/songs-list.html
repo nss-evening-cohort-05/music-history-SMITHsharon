@@ -17,10 +17,10 @@
           <th scope="row"></th>
           <td>{{song.artist}}</td>
           <td>{{song.album}}</td>
-          <td>{{song.song}}</td>
+          <td><a ng-href="#!/song/edit/{{song.id}}">{{song.song}}</a></td>
           <td>{{song.genre}}</td>
           <td>
-          <a ng-href="#!/song/add"><button class="btn btn-xs fa fa fa-pencil pull-right" ng-click="editSong(song.id)"></button></a></td>
+          <a ng-href="#!/song/edit/{{song.id}}"><button class="btn btn-xs fa fa fa-pencil pull-right""></button></a></td>
           <td>
           <button class="btn btn-xs fa fa-trash-o pull-right" ng-click="deleteSong(song.id)"></button></td>
         </tr>

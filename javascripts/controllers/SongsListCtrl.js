@@ -17,22 +17,6 @@ app.controller("SongsListCtrl", function($scope, SongFactory) {
 
 
 
-	$scope.editSong = (id) => {
-
-console.log("in editSong from Pencil click / id :: ", id);
-		// SongFactory.getSingleSong($routeParams.id)
-		// SongFactory.getSingleSong(id)
-	.then((results) => {
-		$scope.newSong = results.data;
-	})
-	.catch((error) => {
-		console.log("error in getSingleSong", error);
-	});
-	};
-
-
-
-
 	$scope.addNewSong = () => {
 
 		SongFactory.editSong($scope.newSong)
