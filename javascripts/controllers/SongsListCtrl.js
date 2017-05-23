@@ -31,13 +31,25 @@ app.controller("SongsListCtrl", function($scope, SongFactory) {
 
 
 	$scope.deleteSong = (id) => {
-
+// console.log("deleteSong / id :: ", id);
 		SongFactory.deletz(id)
 		.then(() => {
 			getSongs();
 		})
 		.catch((error) => {
 			console.log("error in deleteSong", error);
+		});
+	};
+
+
+	$scope.inputChange = (song) => {
+
+		SongFactory.editSong(song)
+		.then(() => {
+			//
+		})
+		.catch((error) => {
+			console.log("error in inputChange", error);
 		});
 	};
 
