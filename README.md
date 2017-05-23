@@ -3,6 +3,9 @@
 ### Project Description 
 This assignment is ongoing, with each iteration layering in new skills and functionality into the project, either on top of or replacing entirely the code that has come before. 
 
+#### Music History 10ish
+Reworked the application that was developed for MH5, rewriting all functionality using angular. 
+
 #### Music History 5 
 Reworked the application that was developed for MH4, layering in jQuery code. 
 
