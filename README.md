@@ -72,6 +72,7 @@ Music History 10ish:
 - `Bootstrap`
 - `Angular`
 - `Grunt`
+- firebase
 
 
 ### How To View The Screen 
