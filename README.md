@@ -32,7 +32,7 @@ Parts 1 and 2 created the look and underlying structure of the components.
 
 
 #### Music History 10, on Edit Song
-![Music History 10 on Edit Song]()
+![Music History 10 on Edit Song](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20Edit.png)
 
 
 ### Project Specs
