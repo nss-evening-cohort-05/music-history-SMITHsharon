@@ -1,10 +1,10 @@
 app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, UserFactory) {
 
 	// auto logon for development
-	// $scope.auth = {
-	// 	email: "",
-	// 	password: ""
-	// };
+	$scope.auth = {
+		email: "a.a@gmail.com",
+		password: "123456"
+	};
 
 
 	if ($location.path() === '/logout') {
