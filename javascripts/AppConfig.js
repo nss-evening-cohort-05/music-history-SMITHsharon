@@ -49,19 +49,23 @@ app.config(function($routeProvider) {
 
   	.when('/songs/list', {
   		templateUrl: 'partials/songs-list.html',
-  		controller: 'SongsListCtrl'
+  		controller: 'SongsListCtrl',
+      resolve : {isAuth}
   	})
   	.when('/song/add', {
   		templateUrl: 'partials/song-add.html',
-  		controller: 'SongAddCtrl'
+  		controller: 'SongAddCtrl',
+      resolve : {isAuth}
   	})
     .when('/song/view/:id', {
       templateUrl: 'partials/view-song.html',
-      controller: 'SongViewCtrl'
+      controller: 'SongViewCtrl',
+      resolve : {isAuth}
     })
     .when('/song/edit/:id', {
       templateUrl: 'partials/song-add.html',
-      controller: 'SongEditCtrl'
+      controller: 'SongEditCtrl',
+      resolve : {isAuth}
     })
 
     .when('/logout', {
