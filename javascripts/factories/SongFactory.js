@@ -1,11 +1,11 @@
 app.factory("SongFactory", function($http, $q, FIREBASE_CONFIG) {
 
 
-	let getSongList = () => {
+	let getSongList = (userId) => {
 
 		let songz = [];
 		return $q((resolve, reject) => {
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/songs.json`)
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/songs.json?orderBy="uid"&equalTo="${userId}"`)
 			.then((fbSongs) => {
 				var songCollection = fbSongs.data;
 				if (songCollection !== null) {
@@ -63,7 +63,8 @@ app.factory("SongFactory", function($http, $q, FIREBASE_CONFIG) {
 				album: thisSong.album,
 				artist: thisSong.artist,
 				song: thisSong.song,
-				genre: thisSong.genre
+				genre: thisSong.genre,
+        		uid: thisSong.uid,
 			}))
 			.then((resultz) => {
 				resolve(resultz);
