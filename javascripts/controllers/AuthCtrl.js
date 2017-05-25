@@ -17,12 +17,14 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 	let logMeIn = () => {
 
 		AuthFactory.authenticate($scope.auth).then((userCreds) => {
+
+console.log("userCreds :: ", userCreds);
 			return UserFactory.getUser(userCreds.uid);
 		}, (error) => {
 			console.log("error on authenticate", error);
 		}).then((user) => {
 			$rootScope.user = user;
-			$location.url('/songs-list');
+			$location.url('/songs/list');
 		}).catch((error) => {
 			console.log("error on getUser", error);
 		});
@@ -34,7 +36,7 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 		// add user name
 		// login
 		AuthFactory.registerWithEmail($scope.auth).then((didRegister) => {
-console.log("didRegister", didRegister);
+// console.log("didRegister", didRegister);
 			$scope.auth.uid = didRegister.uid;
 			return UserFactory.addUser($scope.auth);
 		}, (error) => {

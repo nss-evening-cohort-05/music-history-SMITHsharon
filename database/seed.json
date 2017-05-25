@@ -54,5 +54,15 @@
 			"album": "Genius The Ultimate Ray Charles Collection",
 			"genre": "Blues"
 		}
-	}		
+	},
+    "users": {
+        "user0": {
+            "uid" : "WPGJU3agEQc7GmDqU1MB4WGyK6J2",
+            "username" : "a"
+        },
+        "user1": {
+            "uid" : "hn8F6rQKHVYJWePJTms4rxFU4X53",
+            "username" : "b"
+        }
+    }
 }
