@@ -38,10 +38,8 @@ app.factory("AuthFactory", function($q, $http, $rootScope, FIREBASE_CONFIG) {
 	let registerWithEmail = (user) => {
 
 		return $q ((resolve, reject) => {
-console.log("registeringWithEmail / user", user);
 			firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
 			.then((resultz) => {
-console.log("resultz :: ", resultz);
 				resolve(resultz);
 			})
 			.catch((error) => {

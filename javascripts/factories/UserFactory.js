@@ -20,16 +20,14 @@ app.factory("UserFactory", function($q, $http, FIREBASE_CONFIG) {
 
 
 	let getUser = (userId) => {
-// console.log("in getUser / userId :: ", userId);
+
 		return $q ((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${userId}"`)
 			.then((userObject) => {
-// console.log("userObject :: ", userObject);
 				let users = [];
 				Object.keys(userObject.data).forEach((key) => {
 					users.push(userObject.data[key]);
 				});
-// console.log("users[0] :: ", users[0]);
 				resolve(users[0]);
 			})
 			.catch((error) => {

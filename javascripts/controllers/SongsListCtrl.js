@@ -31,7 +31,7 @@ app.controller("SongsListCtrl", function($scope, SongFactory) {
 
 
 	$scope.deleteSong = (id) => {
-// console.log("deleteSong / id :: ", id);
+
 		SongFactory.deletz(id)
 		.then(() => {
 			getSongs();

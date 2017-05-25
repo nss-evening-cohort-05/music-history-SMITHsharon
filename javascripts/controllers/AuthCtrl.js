@@ -18,7 +18,6 @@ app.controller("AuthCtrl", function($location, $rootScope, $scope, AuthFactory, 
 
 		AuthFactory.authenticate($scope.auth).then((userCreds) => {
 
-console.log("userCreds :: ", userCreds);
 			return UserFactory.getUser(userCreds.uid);
 		}, (error) => {
 			console.log("error on authenticate", error);
@@ -36,7 +35,7 @@ console.log("userCreds :: ", userCreds);
 		// add user name
 		// login
 		AuthFactory.registerWithEmail($scope.auth).then((didRegister) => {
-// console.log("didRegister", didRegister);
+
 			$scope.auth.uid = didRegister.uid;
 			return UserFactory.addUser($scope.auth);
 		}, (error) => {

@@ -57,12 +57,16 @@
 	},
     "users": {
         "user0": {
-            "uid" : "WPGJU3agEQc7GmDqU1MB4WGyK6J2",
+            "uid" : "kKAvW7pt8QS5BQu61LLGU3actFl2",
             "username" : "a"
         },
         "user1": {
-            "uid" : "hn8F6rQKHVYJWePJTms4rxFU4X53",
+            "uid" : "3FL0DGgbcCcjGvcmdcufbosByTZ2",
             "username" : "b"
+        },
+        "user2": {
+            "uid" : "GlU9lJoklWWLq8fYpBHeBjRFAeR2",
+            "username" : "s"
         }
     }
 }
