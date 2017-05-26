@@ -4,6 +4,7 @@
 This assignment is ongoing, with each iteration layering in new skills and functionality into the project, either on top of or replacing entirely the code that has come before. 
 
 #### Music History 10ish
+
 Reworked the application that was developed for MH5, to angularize the entire app.   
 
 #### Music History 5 
@@ -44,7 +45,6 @@ Parts 1 and 2 created the look and underlying structure of the components.
 
 #### Music History 10, on Search Text
 ![Music History 10 on Search Text]()
-
 
 ### Project Specs
 #### Music History 5 Specs
@@ -88,6 +88,7 @@ Music History 10ish:
 - `Bootstrap`
 - `Angular`
 - `Grunt`
+- firebase
 
 
 ### How To View The Screen 
