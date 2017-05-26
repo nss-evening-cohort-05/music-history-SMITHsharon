@@ -42,6 +42,10 @@ Parts 1 and 2 created the look and underlying structure of the components.
 ![Music History 10 on Edit Song](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20Edit%20Song.png)
 
 
+#### Music History 10, on Search Text
+![Music History 10 on Search Text]()
+
+
 ### Project Specs
 #### Music History 5 Specs
 Implemented `jQuery` in the Music History code for every `innerHTML`, `getElementById`, `getElementByClassName`, event listener and XHR request.
@@ -69,6 +73,7 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 - Added `AuthCtrl`, `AuthFactory`, and `auth.html` to code the components to register new users, and provide the user login and logout interface
 - Changed the functionality of the navbar so the options change depending on whether user is logged in or not
 - The Songs List view displays the current user's name, and filters the displayed songs based on that user's ID
+- Added `searchText` feature
 
 
 ### Technologies Used

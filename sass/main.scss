@@ -2,7 +2,6 @@
 @import "fonts";
 
 body {
-	// background-color: $background;
 	background-size: cover;
 	background-image: url("/images/background.jpeg");
 	font: 100% $font-stack;
@@ -17,7 +16,13 @@ h1 {
 }
 
 
+.textSearch {
+	margin-left: 100px;
+}
+
+
 .songsList {
+	margin-top: 25px;
 	margin-right: 5%;
 	margin-left: 5%;
 

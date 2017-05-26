@@ -1,3 +1,6 @@
+<div class="textSearch">
+  <input type="text" name="" placeholder="Search for ....." ng-model="searchText">
+</div>
 
 <div class="panel panel-default songsList">
   <div class="panel-heading">{{user.username}}'s Songs</div>
@@ -13,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="songRow" ng-repeat="song in songs">
+        <tr class="songRow" ng-repeat="song in songs | filter: searchText">
           <th scope="row"></th>
           <td>{{song.artist}}</td>
           <td>{{song.album}}</td>
