@@ -44,7 +44,7 @@ Parts 1 and 2 created the look and underlying structure of the components.
 
 
 #### Music History 10, on Search Text
-![Music History 10 on Search Text]()
+![Music History 10 on Search Text](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20searchText.png)
 
 ### Project Specs
 #### Music History 5 Specs
