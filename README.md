@@ -71,7 +71,7 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 
 ###### Music History 10: Part 2
 - Added `AuthCtrl`, `AuthFactory`, and `auth.html` to code the components to register new users, and provide the user login and logout interface
-- Changed the functionality of the navbar so the options change depending on whether user is logged in or not
+- Changed the functionality of the `navbar` so the options change depending on whether user is logged in or not
 - The Songs List view displays the current user's name, and filters the displayed songs based on that user's ID
 - Added `searchText` feature
 
