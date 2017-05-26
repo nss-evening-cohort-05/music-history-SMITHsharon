@@ -4,7 +4,8 @@
 This assignment is ongoing, with each iteration layering in new skills and functionality into the project, either on top of or replacing entirely the code that has come before. 
 
 #### Music History 10ish
-Reworked the application that was developed for MH5, rewriting all functionality using angular. 
+
+Reworked the application that was developed for MH5, to angularize the entire app.   
 
 #### Music History 5 
 Reworked the application that was developed for MH4, layering in jQuery code. 
@@ -31,12 +32,19 @@ Parts 1 and 2 created the look and underlying structure of the components.
 
 
 #### Music History 10, on Launch
-![Music History 10 on Launch](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20Launch.png)
+![Music History 10 on Launch](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20Launch%20Login.png)
+
+
+#### Music History 10, on List Songs, Filtered by User LogIn
+![Music History 10 on Edit Song](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20List%20Songs%20%3A%20Filtered.png)
 
 
 #### Music History 10, on Edit Song
-![Music History 10 on Edit Song](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20Edit.png)
+![Music History 10 on Edit Song](https://raw.githubusercontent.com/nss-evening-cohort-05/music-history-SMITHsharon/auth/screens/Music%20History%2010%20on%20Edit%20Song.png)
 
+
+#### Music History 10, on Search Text
+![Music History 10 on Search Text]()
 
 ### Project Specs
 #### Music History 5 Specs
@@ -49,6 +57,7 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 - If the user clicks the `More` button, an XHR request is executed to load `songs2.json`. The songs in this `json` file are pushed to the end of the `songs` object array, and the revised array is written to the DOM. 
 
 #### Music History 10 Specs :: Reworked the App Using Angular
+###### Part 1
 - Completed all the project setup: jQuery, Bootstrap, SASS, Angular, Angular-Route, Grunt
 - Created a JSON file of song records (seed file) and imported the file into Firebase 
 - Injected `ngRoute` into the application
@@ -58,6 +67,13 @@ Implemented `jQuery` in the Music History code for every `innerHTML`, `getElemen
 - The `SonglistCtrl` loads the JSON data from Firebase with an `XHR` call using the `$http` function that Angular provides.
 - The app puts the JSON object into `$scope.songs` and binds that variable to the controller.
 - Reworked the List, Add, Edit, and Delete functionality using Angular
+
+
+###### Music History 10: Part 2
+- Added `AuthCtrl`, `AuthFactory`, and `auth.html` to code the components to register new users, and provide the user login and logout interface
+- Changed the functionality of the navbar so the options change depending on whether user is logged in or not
+- The Songs List view displays the current user's name, and filters the displayed songs based on that user's ID
+- Added `searchText` feature
 
 
 ### Technologies Used

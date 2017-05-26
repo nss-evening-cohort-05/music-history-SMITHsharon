@@ -1,10 +1,11 @@
-app.controller("SongsListCtrl", function($scope, SongFactory) {
+app.controller("SongsListCtrl", function($rootScope, $scope, SongFactory) {
 
 	$scope.songs = [];
 
 	let getSongs = () => {
 
-		SongFactory.getSongList()
+		// calling getUser to get the userId is technically better then using $rootScope
+		SongFactory.getSongList($rootScope.user.uid)
 		.then((songz) => {
 			$scope.songs = songz;
 		})
@@ -31,7 +32,7 @@ app.controller("SongsListCtrl", function($scope, SongFactory) {
 
 
 	$scope.deleteSong = (id) => {
-// console.log("deleteSong / id :: ", id);
+
 		SongFactory.deletz(id)
 		.then(() => {
 			getSongs();

@@ -4,55 +4,78 @@
 			"song": "Break",
 			"artist": "Dave Perkins",
 			"album": "Pistol City Holiness",
-			"genre": "Blues"
+			"genre": "Blues",
+			"uid": "kKAvW7pt8QS5BQu61LLGU3actFl2"
 		},
 		"song1": {
 			"song": "The Worst Is Yet To Come",
 			"artist": "Keb' Mo'",
 			"album": "Bluesamericana",
-			"genre": "Contemporary Blues"
+			"genre": "Contemporary Blues",
+			"uid": "3FL0DGgbcCcjGvcmdcufbosByTZ2"
 		},
 		"song2": {
 			"song": "Salvation Army Band",
 			"artist": "Phil Keaggy",
 			"album": "Live From Kegworth Studio",
-			"genre": "Rock"
+			"genre": "Rock",
+			"uid": "GlU9lJoklWWLq8fYpBHeBjRFAeR2"
 		},
 		"song3": {
 			"song": "Moonlight",
 			"artist": "The Piano Guys",
 			"album": "The Piano Guys",
-			"genre": "Pop"
+			"genre": "Pop",
+			"uid": "kKAvW7pt8QS5BQu61LLGU3actFl2"
 		},
 		"song4": {
 			"song": "Hallelujah",
 			"artist": "Pentatonix",
 			"album": "Hallelujah",
-			"genre": "Pop"
+			"genre": "Pop",
+			"uid": "3FL0DGgbcCcjGvcmdcufbosByTZ2"
 		},
 		"song5": {
 			"song": "* take your pick *",
 			"artist": "Yo-Yo Ma / Chris Thile / Edgar Meyer",
 			"album": "Bach Trios",
-			"genre": "Classical"
+			"genre": "Classical",
+			"uid": "GlU9lJoklWWLq8fYpBHeBjRFAeR2"
 		},
 		"song6": {
 			"song": "Dazed and Confused",
 			"artist": "Led Zeppelin",
 			"album": "Mothership",
-			"genre": "Rock"
+			"genre": "Rock",
+			"uid": "kKAvW7pt8QS5BQu61LLGU3actFl2"
 		},
 		"song7": {
 			"song": "I Can't Help You Now",
 			"artist": "Bonnie Raitt",
 			"album": "Silver Lining",
-			"genre": "Blues"
+			"genre": "Blues",
+			"uid": "3FL0DGgbcCcjGvcmdcufbosByTZ2"
 		},
 		"song8": {
 			"song": "Georgia On My Mind",
 			"artist": "Ray Charles",
 			"album": "Genius The Ultimate Ray Charles Collection",
-			"genre": "Blues"
+			"genre": "Blues",
+			"uid": "GlU9lJoklWWLq8fYpBHeBjRFAeR2"
 		}
-	}		
+	},
+    "users": {
+        "user0": {
+            "uid" : "kKAvW7pt8QS5BQu61LLGU3actFl2",
+            "username" : "Angie"
+        },
+        "user1": {
+            "uid" : "3FL0DGgbcCcjGvcmdcufbosByTZ2",
+            "username" : "Bach"
+        },
+        "user2": {
+            "uid" : "GlU9lJoklWWLq8fYpBHeBjRFAeR2",
+            "username" : "Sharon"
+        }
+    }
 }
